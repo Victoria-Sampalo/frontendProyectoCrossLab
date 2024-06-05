@@ -1,4 +1,5 @@
-import { useState, useEffect } from "react";
+// ./src/components/Login.jsx
+import { useState, useEffect, useContext } from "react";
 import styles from "../styles/Login.module.css";
 import { Link, useNavigate } from 'react-router-dom';
 import { validEmail, validPassword } from '../lib/valid';
@@ -6,10 +7,12 @@ import { textErrors } from '../lib/textErrors';
 import { getPrueba, loggear } from '../lib/data';
 import { useLogin } from '../hooks/useLogin';
 import { guardarToken } from '../lib/serviceToken';
+import { LoggedContext } from "../context/LoggedProvider";
 
 const Login = () => {
      // Obtener el estado de login y la función para cambiarlo del hook useLogin
-     const {logged, cambiarLogged} = useLogin();
+     //const {logged, cambiarLogged} = useLogin();
+     const { logged, cambiarLogged } = useContext(LoggedContext);
      // Definir los estados locales para email y password
      const [email, setEmail] = useState(null);
      const [pass, setPass] = useState(null);
@@ -27,36 +30,59 @@ const Login = () => {
     useEffect(()=>{
         console.log(logged)
        if(logged.estaLogueado) navigate('/');
-      },[logged])
+      },[logged, navigate])
 // Manejar cambios en los inputs de email y password
     const handleChange=(e)=>{
-        let auxErrores={...errores}
-        auxErrores['mensajeError']=null
-          // Validar el email y actualizar el estado de errores
-        if(e.target.name=='email') 
-        {   
-            if(!validEmail(e.target.value)){            
-                auxErrores['email']=textErrors('email')
-                setError(auxErrores)
-            } else {
-                auxErrores['email']=null
-                setError(auxErrores)
-            }
+        // let auxErrores={...errores}
+        // auxErrores['mensajeError']=null
+        //   // Validar el email y actualizar el estado de errores
+        // if(e.target.name=='email') 
+        // {   
+        //     if(!validEmail(e.target.value)){            
+        //         auxErrores['email']=textErrors('email')
+        //         setError(auxErrores)
+        //     } else {
+        //         auxErrores['email']=null
+        //         setError(auxErrores)
+        //     }
 
-            setEmail(e.target.value)
+        //     setEmail(e.target.value)
+        // }
+        //   // Validar la contraseña y actualizar el estado de errores
+        // if(e.target.name=='pass') 
+        //     {
+        //         if(!validPassword(e.target.value)){            
+        //             auxErrores['password']=textErrors('password')
+        //             setError(auxErrores)
+        //         } else {
+        //             auxErrores['password']=null
+        //             setError(auxErrores)
+        //         }
+        //         setPass(e.target.value)
+        //     }
+        const { name, value } = e.target;
+        let auxErrores = { ...errores, mensajeError: null };
+    
+        if (name === 'email') {
+          if (!validEmail(value)) {
+            auxErrores.email = textErrors('email');
+          } else {
+            auxErrores.email = null;
+          }
+          setEmail(value);
         }
-          // Validar la contraseña y actualizar el estado de errores
-        if(e.target.name=='pass') 
-            {
-                if(!validPassword(e.target.value)){            
-                    auxErrores['password']=textErrors('password')
-                    setError(auxErrores)
-                } else {
-                    auxErrores['password']=null
-                    setError(auxErrores)
-                }
-                setPass(e.target.value)
-            }
+    
+        if (name === 'pass') {
+          if (!validPassword(value)) {
+            auxErrores.password = textErrors('password');
+          } else {
+            auxErrores.password = null;
+          }
+          setPass(value);
+        }
+    
+        setError(auxErrores);
+
     }
    // Función para manejar el login
     const loguear=async ()=>{
@@ -118,7 +144,7 @@ const Login = () => {
         <span className="errorSpan">{errores.password}</span>
       </div>
       <p className="fuenteCourier enlace">¿Has olvidado tu contraseña?</p>
-      <button onClick={() => loguear()}>Entrar</button>
+      <button onClick={loguear}>Entrar</button>
       <Link to="/crearcuenta"><p className="enlace">CREAR CUENTA</p></Link>
       
       <span className="errorSpan">{errores.mensajeError}</span>

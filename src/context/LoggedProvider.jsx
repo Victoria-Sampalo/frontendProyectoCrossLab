@@ -14,20 +14,33 @@ export function LoggedProvider({children}){
         estaLogueado: false,
         user: {}
     })
-    const cambiarLogged=(user)=>{
-        const auxLogged= structuredClone(logged)
-        auxLogged['estaLogueado']=true
-        auxLogged['user']=user
-        setLogged(auxLogged)
-    }
+    // const cambiarLogged=(user)=>{
+    //     const auxLogged= structuredClone(logged)
+    //     auxLogged['estaLogueado']=true
+    //     auxLogged['user']=user
+    //     setLogged(auxLogged)
+    // }
+    const cambiarLogged = (user) => {
+        setLogged({
+          estaLogueado: true,
+          user: user
+        });
+      };
 
-    const logout=()=>{
-        const auxLogged= {}
-        auxLogged['estaLogueado']=false
-        auxLogged['user']={}
-        borrarToken()
-        setLogged(auxLogged)
-    }
+    // const logout=()=>{
+    //     const auxLogged= {}
+    //     auxLogged['estaLogueado']=false
+    //     auxLogged['user']={}
+    //     borrarToken()
+    //     setLogged(auxLogged)
+    // }
+    const logout = () => {
+        setLogged({
+          estaLogueado: false,
+          user: {}
+        });
+        borrarToken();
+      };
 //Cosas que queremos que se puedan acceder desde ese contexto
     return(
         <LoggedContext.Provider value={{

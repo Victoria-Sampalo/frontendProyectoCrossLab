@@ -9,7 +9,7 @@ function Header() {
   const {logged, cambiarLogged, logout}=useLogin()
   // Inicializar el hook de navegación
   const navigate = useNavigate();
- console.log("En header "+ JSON.stringify(logged))
+ //console.log("En header "+ JSON.stringify(logged))
  const icono = ()=>{
   if(logged.estaLogueado){
     return <button onClick={()=>logout()}>CERRAR SESIÓN</button> 
@@ -25,8 +25,10 @@ function Header() {
       <h1>C</h1>
       <nav>
         <ul style={navStyle}>
-          <li><a href="/">HOME</a></li>
-          <li><a href="/about">ABOUT</a></li>
+          <li><a href="/">HOME | </a></li>
+          <li><a href="/about"> ABOUT |</a></li>
+          {/* <li><a href="/account"> ACCOUNT |  </a></li> */}
+          {logged.estaLogueado && <li><Link to="/account">ACCOUNT</Link></li>}
           <li>{icono()}</li>
         </ul>
       </nav>
