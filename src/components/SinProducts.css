@@ -1,0 +1,13 @@
+.sinproducts {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    /* font-size: 14px; */
+    font-weight: 700;
+  }
+
+.sinproducts>h3{
+font-size: 2rem;
+}

@@ -1,0 +1,725 @@
+{
+    "error": false,
+    "data": [
+        {
+            "_id": "663b9339278dad5624c3466a",
+            "sku": "QAIIT83S",
+            "name": "Product 1",
+            "price": 74,
+            "brand": "Brand C",
+            "category": "Belts",
+            "description": "Description C",
+            "images": [
+                "https://images.pexels.com/photos/221247/pexels-photo-221247.jpeg",
+                "https://example.com/image1.jpg",
+                "https://example.com/image2.jpg"
+            ],
+            "stock": 106,
+            "creation_date": "2024-05-08T14:59:05.986Z",
+            "modify_date": "2024-05-08T14:59:05.986Z",
+            "__v": 0
+        },
+        {
+            "_id": "663b933a278dad5624c3466d",
+            "sku": "QAMEWZ6D",
+            "name": "Product 2",
+            "price": 14,
+            "brand": "Brand B",
+            "category": "Belts",
+            "description": "Description A",
+            "images": [
+                "https://images.pexels.com/photos/221247/pexels-photo-221247.jpeg",
+                "https://example.com/image1.jpg",
+                "https://example.com/image2.jpg"
+            ],
+            "stock": 967,
+            "creation_date": "2024-05-08T14:59:06.136Z",
+            "modify_date": "2024-05-08T14:59:06.136Z",
+            "__v": 0
+        },
+        {
+            "_id": "663b933a278dad5624c34670",
+            "sku": "9J98BMU9",
+            "name": "Product 3",
+            "price": 77,
+            "brand": "Brand A",
+            "category": "Other",
+            "description": "Description B",
+            "images": [
+                "https://images.pexels.com/photos/221247/pexels-photo-221247.jpeg",
+                "https://example.com/image1.jpg",
+                "https://example.com/image2.jpg"
+            ],
+            "stock": 757,
+            "creation_date": "2024-05-08T14:59:06.224Z",
+            "modify_date": "2024-05-08T14:59:06.224Z",
+            "__v": 0
+        },
+        {
+            "_id": "663b933a278dad5624c34673",
+            "sku": "VX682NN6",
+            "name": "Product 4",
+            "price": 12,
+            "brand": "Brand C",
+            "category": "Wrist_Guards",
+            "description": "Description C",
+            "images": [
+                "https://images.pexels.com/photos/221247/pexels-photo-221247.jpeg",
+                "https://example.com/image1.jpg",
+                "https://example.com/image2.jpg"
+            ],
+            "stock": 877,
+            "creation_date": "2024-05-08T14:59:06.306Z",
+            "modify_date": "2024-05-08T14:59:06.306Z",
+            "__v": 0
+        },
+        {
+            "_id": "663b933a278dad5624c34676",
+            "sku": "9K7T5SVN",
+            "name": "Product 5",
+            "price": 86,
+            "brand": "Brand A",
+            "category": "Belts",
+            "description": "Description A",
+            "images": [
+                "https://images.pexels.com/photos/221247/pexels-photo-221247.jpeg",
+                "https://example.com/image1.jpg",
+                "https://example.com/image2.jpg"
+            ],
+            "stock": 644,
+            "creation_date": "2024-05-08T14:59:06.390Z",
+            "modify_date": "2024-05-08T14:59:06.390Z",
+            "__v": 0
+        },
+        {
+            "_id": "663b933a278dad5624c34679",
+            "sku": "5IO2IJ6Z",
+            "name": "Product 6",
+            "price": 4,
+            "brand": "Brand C",
+            "category": "Knee_Pads",
+            "description": "Description B",
+            "images": [
+                "https://images.pexels.com/photos/221247/pexels-photo-221247.jpeg",
+                "https://example.com/image1.jpg",
+                "https://example.com/image2.jpg"
+            ],
+            "stock": 354,
+            "creation_date": "2024-05-08T14:59:06.473Z",
+            "modify_date": "2024-05-08T14:59:06.473Z",
+            "__v": 0
+        },
+        {
+            "_id": "663b933a278dad5624c3467c",
+            "sku": "KMTY3ER7",
+            "name": "Product 7",
+            "price": 15,
+            "brand": "Brand C",
+            "category": "Ropes",
+            "description": "Description A",
+            "images": [
+                "https://images.pexels.com/photos/221247/pexels-photo-221247.jpeg",
+                "https://example.com/image1.jpg",
+                "https://example.com/image2.jpg"
+            ],
+            "stock": 43,
+            "creation_date": "2024-05-08T14:59:06.557Z",
+            "modify_date": "2024-05-08T14:59:06.557Z",
+            "__v": 0
+        },
+        {
+            "_id": "663b933a278dad5624c3467f",
+            "sku": "CDSJOT65",
+            "name": "Product 8",
+            "price": 58,
+            "brand": "Brand B",
+            "category": "Elbow_Pads",
+            "description": "Description C",
+            "images": [
+                "https://images.pexels.com/photos/221247/pexels-photo-221247.jpeg",
+                "https://example.com/image1.jpg",
+                "https://example.com/image2.jpg"
+            ],
+            "stock": 986,
+            "creation_date": "2024-05-08T14:59:06.641Z",
+            "modify_date": "2024-05-08T14:59:06.641Z",
+            "__v": 0
+        },
+        {
+            "_id": "663b933a278dad5624c34682",
+            "sku": "CK6K6CV3",
+            "name": "Product 9",
+            "price": 14,
+            "brand": "Brand A",
+            "category": "Knee_Pads",
+            "description": "Description A",
+            "images": [
+                "https://images.pexels.com/photos/221247/pexels-photo-221247.jpeg",
+                "https://example.com/image1.jpg",
+                "https://example.com/image2.jpg"
+            ],
+            "stock": 420,
+            "creation_date": "2024-05-08T14:59:06.730Z",
+            "modify_date": "2024-05-08T14:59:06.730Z",
+            "__v": 0
+        },
+        {
+            "_id": "663b933a278dad5624c34685",
+            "sku": "UYK2X04J",
+            "name": "Product 10",
+            "price": 62,
+            "brand": "Brand B",
+            "category": "Ropes",
+            "description": "Description C",
+            "images": [
+                "https://images.pexels.com/photos/221247/pexels-photo-221247.jpeg",
+                "https://example.com/image1.jpg",
+                "https://example.com/image2.jpg"
+            ],
+            "stock": 458,
+            "creation_date": "2024-05-08T14:59:06.814Z",
+            "modify_date": "2024-05-08T14:59:06.814Z",
+            "__v": 0
+        },
+        {
+            "_id": "663b933a278dad5624c34688",
+            "sku": "1HI8RHBZ",
+            "name": "Product 11",
+            "price": 71,
+            "brand": "Brand A",
+            "category": "Backpacks",
+            "description": "Description A",
+            "images": [
+                "https://images.pexels.com/photos/221247/pexels-photo-221247.jpeg",
+                "https://example.com/image1.jpg",
+                "https://example.com/image2.jpg"
+            ],
+            "stock": 390,
+            "creation_date": "2024-05-08T14:59:06.899Z",
+            "modify_date": "2024-05-08T14:59:06.899Z",
+            "__v": 0
+        },
+        {
+            "_id": "663b933a278dad5624c3468b",
+            "sku": "MQU8WQSN",
+            "name": "Product 12",
+            "price": 33,
+            "brand": "Brand A",
+            "category": "Backpacks",
+            "description": "Description B",
+            "images": [
+                "https://images.pexels.com/photos/221247/pexels-photo-221247.jpeg",
+                "https://example.com/image1.jpg",
+                "https://example.com/image2.jpg"
+            ],
+            "stock": 745,
+            "creation_date": "2024-05-08T14:59:06.981Z",
+            "modify_date": "2024-05-08T14:59:06.981Z",
+            "__v": 0
+        },
+        {
+            "_id": "663b933b278dad5624c3468e",
+            "sku": "7HMN3KQP",
+            "name": "Product 13",
+            "price": 100,
+            "brand": "Brand A",
+            "category": "Belts",
+            "description": "Description B",
+            "images": [
+                "https://images.pexels.com/photos/221247/pexels-photo-221247.jpeg",
+                "https://example.com/image1.jpg",
+                "https://example.com/image2.jpg"
+            ],
+            "stock": 74,
+            "creation_date": "2024-05-08T14:59:07.067Z",
+            "modify_date": "2024-05-08T14:59:07.067Z",
+            "__v": 0
+        },
+        {
+            "_id": "663b933b278dad5624c34691",
+            "sku": "4D5PL8W3",
+            "name": "Product 14",
+            "price": 99,
+            "brand": "Brand B",
+            "category": "Wrist_Guards",
+            "description": "Description B",
+            "images": [
+                "https://images.pexels.com/photos/221247/pexels-photo-221247.jpeg",
+                "https://example.com/image1.jpg",
+                "https://example.com/image2.jpg"
+            ],
+            "stock": 775,
+            "creation_date": "2024-05-08T14:59:07.150Z",
+            "modify_date": "2024-05-08T14:59:07.150Z",
+            "__v": 0
+        },
+        {
+            "_id": "663b933b278dad5624c34694",
+            "sku": "OFHH6L3R",
+            "name": "Product 15",
+            "price": 75,
+            "brand": "Brand A",
+            "category": "Insoles",
+            "description": "Description B",
+            "images": [
+                "https://images.pexels.com/photos/221247/pexels-photo-221247.jpeg",
+                "https://example.com/image1.jpg",
+                "https://example.com/image2.jpg"
+            ],
+            "stock": 429,
+            "creation_date": "2024-05-08T14:59:07.480Z",
+            "modify_date": "2024-05-08T14:59:07.480Z",
+            "__v": 0
+        },
+        {
+            "_id": "663b933b278dad5624c34697",
+            "sku": "6SKC24DD",
+            "name": "Product 16",
+            "price": 9,
+            "brand": "Brand C",
+            "category": "Knee_Pads",
+            "description": "Description B",
+            "images": [
+                "https://images.pexels.com/photos/221247/pexels-photo-221247.jpeg",
+                "https://example.com/image1.jpg",
+                "https://example.com/image2.jpg"
+            ],
+            "stock": 999,
+            "creation_date": "2024-05-08T14:59:07.562Z",
+            "modify_date": "2024-05-08T14:59:07.562Z",
+            "__v": 0
+        },
+        {
+            "_id": "663b933b278dad5624c3469a",
+            "sku": "NRV20BUT",
+            "name": "Product 17",
+            "price": 68,
+            "brand": "Brand B",
+            "category": "Knee_Pads",
+            "description": "Description A",
+            "images": [
+                "https://images.pexels.com/photos/221247/pexels-photo-221247.jpeg",
+                "https://example.com/image1.jpg",
+                "https://example.com/image2.jpg"
+            ],
+            "stock": 102,
+            "creation_date": "2024-05-08T14:59:07.698Z",
+            "modify_date": "2024-05-08T14:59:07.698Z",
+            "__v": 0
+        },
+        {
+            "_id": "663b933b278dad5624c3469d",
+            "sku": "97I09BAT",
+            "name": "Product 18",
+            "price": 96,
+            "brand": "Brand C",
+            "category": "Insoles",
+            "description": "Description C",
+            "images": [
+                "https://images.pexels.com/photos/221247/pexels-photo-221247.jpeg",
+                "https://example.com/image1.jpg",
+                "https://example.com/image2.jpg"
+            ],
+            "stock": 414,
+            "creation_date": "2024-05-08T14:59:07.798Z",
+            "modify_date": "2024-05-08T14:59:07.798Z",
+            "__v": 0
+        },
+        {
+            "_id": "663b933b278dad5624c346a0",
+            "sku": "CPY65M6F",
+            "name": "Product 19",
+            "price": 7,
+            "brand": "Brand A",
+            "category": "Other",
+            "description": "Description C",
+            "images": [
+                "https://images.pexels.com/photos/221247/pexels-photo-221247.jpeg",
+                "https://example.com/image1.jpg",
+                "https://example.com/image2.jpg"
+            ],
+            "stock": 926,
+            "creation_date": "2024-05-08T14:59:07.881Z",
+            "modify_date": "2024-05-08T14:59:07.881Z",
+            "__v": 0
+        },
+        {
+            "_id": "663b933c278dad5624c346a3",
+            "sku": "XTPURSLO",
+            "name": "Product 20",
+            "price": 40,
+            "brand": "Brand B",
+            "category": "Vests",
+            "description": "Description C",
+            "images": [
+                "https://images.pexels.com/photos/221247/pexels-photo-221247.jpeg",
+                "https://example.com/image1.jpg",
+                "https://example.com/image2.jpg"
+            ],
+            "stock": 907,
+            "creation_date": "2024-05-08T14:59:08.220Z",
+            "modify_date": "2024-05-08T14:59:08.220Z",
+            "__v": 0
+        },
+        {
+            "_id": "663b933c278dad5624c346a6",
+            "sku": "WILXNFNG",
+            "name": "Product 21",
+            "price": 77,
+            "brand": "Brand A",
+            "category": "Belts",
+            "description": "Description B",
+            "images": [
+                "https://images.pexels.com/photos/221247/pexels-photo-221247.jpeg",
+                "https://example.com/image1.jpg",
+                "https://example.com/image2.jpg"
+            ],
+            "stock": 629,
+            "creation_date": "2024-05-08T14:59:08.569Z",
+            "modify_date": "2024-05-08T14:59:08.569Z",
+            "__v": 0
+        },
+        {
+            "_id": "663b933c278dad5624c346a9",
+            "sku": "63ZPRIU1",
+            "name": "Product 22",
+            "price": 81,
+            "brand": "Brand B",
+            "category": "Other",
+            "description": "Description C",
+            "images": [
+                "https://images.pexels.com/photos/221247/pexels-photo-221247.jpeg",
+                "https://example.com/image1.jpg",
+                "https://example.com/image2.jpg"
+            ],
+            "stock": 138,
+            "creation_date": "2024-05-08T14:59:08.652Z",
+            "modify_date": "2024-05-08T14:59:08.652Z",
+            "__v": 0
+        },
+        {
+            "_id": "663b933c278dad5624c346ac",
+            "sku": "C23AMO31",
+            "name": "Product 23",
+            "price": 85,
+            "brand": "Brand C",
+            "category": "Backpacks",
+            "description": "Description C",
+            "images": [
+                "https://images.pexels.com/photos/221247/pexels-photo-221247.jpeg",
+                "https://example.com/image1.jpg",
+                "https://example.com/image2.jpg"
+            ],
+            "stock": 889,
+            "creation_date": "2024-05-08T14:59:08.732Z",
+            "modify_date": "2024-05-08T14:59:08.732Z",
+            "__v": 0
+        },
+        {
+            "_id": "663b933c278dad5624c346af",
+            "sku": "NBW882JT",
+            "name": "Product 24",
+            "price": 86,
+            "brand": "Brand A",
+            "category": "Ropes",
+            "description": "Description C",
+            "images": [
+                "https://images.pexels.com/photos/221247/pexels-photo-221247.jpeg",
+                "https://example.com/image1.jpg",
+                "https://example.com/image2.jpg"
+            ],
+            "stock": 573,
+            "creation_date": "2024-05-08T14:59:08.987Z",
+            "modify_date": "2024-05-08T14:59:08.987Z",
+            "__v": 0
+        },
+        {
+            "_id": "663b933d278dad5624c346b2",
+            "sku": "FUOBESEL",
+            "name": "Product 25",
+            "price": 46,
+            "brand": "Brand A",
+            "category": "Vests",
+            "description": "Description C",
+            "images": [
+                "https://images.pexels.com/photos/221247/pexels-photo-221247.jpeg",
+                "https://example.com/image1.jpg",
+                "https://example.com/image2.jpg"
+            ],
+            "stock": 845,
+            "creation_date": "2024-05-08T14:59:09.087Z",
+            "modify_date": "2024-05-08T14:59:09.087Z",
+            "__v": 0
+        },
+        {
+            "_id": "663b933d278dad5624c346b5",
+            "sku": "M8SOGZLT",
+            "name": "Product 26",
+            "price": 8,
+            "brand": "Brand B",
+            "category": "Elbow_Pads",
+            "description": "Description C",
+            "images": [
+                "https://images.pexels.com/photos/221247/pexels-photo-221247.jpeg",
+                "https://example.com/image1.jpg",
+                "https://example.com/image2.jpg"
+            ],
+            "stock": 330,
+            "creation_date": "2024-05-08T14:59:09.183Z",
+            "modify_date": "2024-05-08T14:59:09.183Z",
+            "__v": 0
+        },
+        {
+            "_id": "663b933d278dad5624c346b8",
+            "sku": "IP58TZSG",
+            "name": "Product 27",
+            "price": 77,
+            "brand": "Brand A",
+            "category": "Elbow_Pads",
+            "description": "Description A",
+            "images": [
+                "https://images.pexels.com/photos/221247/pexels-photo-221247.jpeg",
+                "https://example.com/image1.jpg",
+                "https://example.com/image2.jpg"
+            ],
+            "stock": 209,
+            "creation_date": "2024-05-08T14:59:09.264Z",
+            "modify_date": "2024-05-08T14:59:09.264Z",
+            "__v": 0
+        },
+        {
+            "_id": "663b933d278dad5624c346bb",
+            "sku": "JKVDQ1L8",
+            "name": "Product 28",
+            "price": 41,
+            "brand": "Brand A",
+            "category": "Insoles",
+            "description": "Description C",
+            "images": [
+                "https://images.pexels.com/photos/221247/pexels-photo-221247.jpeg",
+                "https://example.com/image1.jpg",
+                "https://example.com/image2.jpg"
+            ],
+            "stock": 390,
+            "creation_date": "2024-05-08T14:59:09.345Z",
+            "modify_date": "2024-05-08T14:59:09.345Z",
+            "__v": 0
+        },
+        {
+            "_id": "663b933d278dad5624c346be",
+            "sku": "K0LV54ZO",
+            "name": "Product 29",
+            "price": 10,
+            "brand": "Brand C",
+            "category": "Belts",
+            "description": "Description C",
+            "images": [
+                "https://images.pexels.com/photos/221247/pexels-photo-221247.jpeg",
+                "https://example.com/image1.jpg",
+                "https://example.com/image2.jpg"
+            ],
+            "stock": 119,
+            "creation_date": "2024-05-08T14:59:09.426Z",
+            "modify_date": "2024-05-08T14:59:09.426Z",
+            "__v": 0
+        },
+        {
+            "_id": "663b933d278dad5624c346c1",
+            "sku": "IXRD6G78",
+            "name": "Product 30",
+            "price": 78,
+            "brand": "Brand A",
+            "category": "Vests",
+            "description": "Description B",
+            "images": [
+                "https://images.pexels.com/photos/221247/pexels-photo-221247.jpeg",
+                "https://example.com/image1.jpg",
+                "https://example.com/image2.jpg"
+            ],
+            "stock": 4,
+            "creation_date": "2024-05-08T14:59:09.507Z",
+            "modify_date": "2024-05-08T14:59:09.507Z",
+            "__v": 0
+        },
+        {
+            "_id": "663b933d278dad5624c346c4",
+            "sku": "5ANJMK7R",
+            "name": "Product 31",
+            "price": 95,
+            "brand": "Brand A",
+            "category": "Ropes",
+            "description": "Description A",
+            "images": [
+                "https://images.pexels.com/photos/221247/pexels-photo-221247.jpeg",
+                "https://example.com/image1.jpg",
+                "https://example.com/image2.jpg"
+            ],
+            "stock": 496,
+            "creation_date": "2024-05-08T14:59:09.588Z",
+            "modify_date": "2024-05-08T14:59:09.588Z",
+            "__v": 0
+        },
+        {
+            "_id": "663b933d278dad5624c346c7",
+            "sku": "1I6E9KFK",
+            "name": "Product 32",
+            "price": 39,
+            "brand": "Brand B",
+            "category": "Belts",
+            "description": "Description C",
+            "images": [
+                "https://images.pexels.com/photos/221247/pexels-photo-221247.jpeg",
+                "https://example.com/image1.jpg",
+                "https://example.com/image2.jpg"
+            ],
+            "stock": 692,
+            "creation_date": "2024-05-08T14:59:09.672Z",
+            "modify_date": "2024-05-08T14:59:09.672Z",
+            "__v": 0
+        },
+        {
+            "_id": "663b933d278dad5624c346ca",
+            "sku": "2O08GUQK",
+            "name": "Product 33",
+            "price": 76,
+            "brand": "Brand A",
+            "category": "Knee_Pads",
+            "description": "Description A",
+            "images": [
+                "https://images.pexels.com/photos/221247/pexels-photo-221247.jpeg",
+                "https://example.com/image1.jpg",
+                "https://example.com/image2.jpg"
+            ],
+            "stock": 588,
+            "creation_date": "2024-05-08T14:59:09.769Z",
+            "modify_date": "2024-05-08T14:59:09.770Z",
+            "__v": 0
+        },
+        {
+            "_id": "663b933d278dad5624c346cd",
+            "sku": "0BR6WQ2N",
+            "name": "Product 34",
+            "price": 95,
+            "brand": "Brand B",
+            "category": "Belts",
+            "description": "Description A",
+            "images": [
+                "https://images.pexels.com/photos/221247/pexels-photo-221247.jpeg",
+                "https://example.com/image1.jpg",
+                "https://example.com/image2.jpg"
+            ],
+            "stock": 540,
+            "creation_date": "2024-05-08T14:59:09.851Z",
+            "modify_date": "2024-05-08T14:59:09.851Z",
+            "__v": 0
+        },
+        {
+            "_id": "663b933d278dad5624c346d0",
+            "sku": "QQJOF4T8",
+            "name": "Product 35",
+            "price": 13,
+            "brand": "Brand A",
+            "category": "Wrist_Guards",
+            "description": "Description C",
+            "images": [
+                "https://images.pexels.com/photos/221247/pexels-photo-221247.jpeg",
+                "https://example.com/image1.jpg",
+                "https://example.com/image2.jpg"
+            ],
+            "stock": 201,
+            "creation_date": "2024-05-08T14:59:09.937Z",
+            "modify_date": "2024-05-08T14:59:09.937Z",
+            "__v": 0
+        },
+        {
+            "_id": "663b933e278dad5624c346d3",
+            "sku": "OBEQGR72",
+            "name": "Product 36",
+            "price": 11,
+            "brand": "Brand C",
+            "category": "Wrist_Guards",
+            "description": "Description B",
+            "images": [
+                "https://images.pexels.com/photos/221247/pexels-photo-221247.jpeg",
+                "https://example.com/image1.jpg",
+                "https://example.com/image2.jpg"
+            ],
+            "stock": 332,
+            "creation_date": "2024-05-08T14:59:10.051Z",
+            "modify_date": "2024-05-08T14:59:10.051Z",
+            "__v": 0
+        },
+        {
+            "_id": "663b933e278dad5624c346d6",
+            "sku": "COZL2NTP",
+            "name": "Product 37",
+            "price": 33,
+            "brand": "Brand B",
+            "category": "Wrist_Guards",
+            "description": "Description A",
+            "images": [
+                "https://images.pexels.com/photos/221247/pexels-photo-221247.jpeg",
+                "https://example.com/image1.jpg",
+                "https://example.com/image2.jpg"
+            ],
+            "stock": 658,
+            "creation_date": "2024-05-08T14:59:10.134Z",
+            "modify_date": "2024-05-08T14:59:10.134Z",
+            "__v": 0
+        },
+        {
+            "_id": "663b933e278dad5624c346d9",
+            "sku": "PIH98GF5",
+            "name": "Product 38",
+            "price": 81,
+            "brand": "Brand C",
+            "category": "Ropes",
+            "description": "Description A",
+            "images": [
+                "https://images.pexels.com/photos/221247/pexels-photo-221247.jpeg",
+                "https://example.com/image1.jpg",
+                "https://example.com/image2.jpg"
+            ],
+            "stock": 745,
+            "creation_date": "2024-05-08T14:59:10.219Z",
+            "modify_date": "2024-05-08T14:59:10.219Z",
+            "__v": 0
+        },
+        {
+            "_id": "663b933e278dad5624c346dc",
+            "sku": "RIFUMEEO",
+            "name": "Product 39",
+            "price": 73,
+            "brand": "Brand A",
+            "category": "Knee_Pads",
+            "description": "Description A",
+            "images": [
+                "https://images.pexels.com/photos/221247/pexels-photo-221247.jpeg",
+                "https://example.com/image1.jpg",
+                "https://example.com/image2.jpg"
+            ],
+            "stock": 213,
+            "creation_date": "2024-05-08T14:59:10.299Z",
+            "modify_date": "2024-05-08T14:59:10.299Z",
+            "__v": 0
+        },
+        {
+            "_id": "663b933e278dad5624c346df",
+            "sku": "LABXPM4G",
+            "name": "Product 40",
+            "price": 37,
+            "brand": "Brand B",
+            "category": "Backpacks",
+            "description": "Description A",
+            "images": [
+                "https://images.pexels.com/photos/221247/pexels-photo-221247.jpeg",
+                "https://example.com/image1.jpg",
+                "https://example.com/image2.jpg"
+            ],
+            "stock": 181,
+            "creation_date": "2024-05-08T14:59:10.380Z",
+            "modify_date": "2024-05-08T14:59:10.380Z",
+            "__v": 0
+        }
+    ]
+}
