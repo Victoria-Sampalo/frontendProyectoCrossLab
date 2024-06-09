@@ -122,7 +122,7 @@ const Login = () => {
     <div className={styles.loginContainer}>
       <h2>LOGIN</h2>
       <div className={styles.inputGroup}>
-        <label for="email">Email</label>
+        <label for="email">EMAIL</label>
         <input
           type="email"
           id="email"
@@ -133,7 +133,7 @@ const Login = () => {
         <span className="errorSpan">{errores.email}</span>
       </div>
       <div className={styles.inputGroup}>
-        <label for="pass">Contraseña</label>
+        <label for="pass">PASSWORD</label>
         <input
           type="password"
           id="pass"
@@ -143,9 +143,13 @@ const Login = () => {
         />
         <span className="errorSpan">{errores.password}</span>
       </div>
-      <p className="fuenteCourier enlace">¿Has olvidado tu contraseña?</p>
-      <button onClick={loguear}>Entrar</button>
-      <Link to="/crearcuenta"><p className="enlace">CREAR CUENTA</p></Link>
+      <button onClick={loguear}>SIGN IN</button>
+
+      <p className="fuenteCourier enlace">¿Forgot your password?</p>
+
+      <Link to="/crearcuenta"><p className="enlace">Create account</p></Link>
+     
+    
       
       <span className="errorSpan">{errores.mensajeError}</span>
     </div>

@@ -1,0 +1,49 @@
+/* formStyles.css */
+
+.formContainer {
+    display: flex;
+    flex-direction: column;
+    border-radius: 15px;
+    border: 1px solid var(--color-morado-vivo);
+    padding: 2rem;
+    margin: 1rem;
+    min-width: 250px;
+    width: auto;
+}
+
+.formContainer > h2 {
+    text-align: center;
+    color: var(--color-rosa-vivo);
+    font-size: 30pt;
+    margin-bottom: 20px;
+}
+
+.formContainer > p {
+    padding: 1rem 0;
+    text-align: center;
+    color: white;
+}
+
+.inputGroup {
+    display: flex;
+    flex-direction: column;
+}
+
+.inputGroup > label {
+    padding: 0.5rem 0;
+    text-transform: uppercase;
+    color: var(--color-rosa-vivo);
+    font-weight: bold;
+}
+
+.inputGroup > input {
+    border: none;
+    border: solid 1px var(--color-azul-oscuro);
+    border-radius: 15px;
+    padding: 0.8rem;
+    border-bottom: solid 3px var(--color-azul-claro);
+}
+
+.inputGroup > span {
+    padding: 0.5rem 0;
+}

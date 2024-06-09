@@ -1,3 +1,47 @@
+/* index.css */
+
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400&display=swap');
+
+/* Importar los estilos comunes para los formularios */
+@import './styles/formStyles.css';
+:root {
+  --color-fondo-oscuro:#1E1E1E;
+ --color-rosa-vivo:#F2308B;
+ --color-rosa-claro:#FC80AD;
+
+ --color-morado:#7D07F2;
+ --color-morado-vivo: #646cff;
+ --color-azul-oscuro:#242040;
+  --color-azul-vivo: #13F2DC;
+  --color-verde-vivo: #C2FF16;
+  --color-amarillo-vivo: #FFE816;
+
+
+  --color-naranja-oscuro: #c36e57;
+  --color-verde: #6e8174;
+  --color-dorado-oscuro: #9c8364;
+  --color-gris-claro: #d1ccc9;
+  --color-gris-oscuro: #676767;
+  --color-gris-oscuro-plus: #333334;
+  --color-estado-paid:#6ADF92;
+  --color-estado-paid-borde:#498D60;
+  --color-estado-sent:#FFF5BF;
+  --color-estado-sent-borde:#FFDB20;
+  --color-estado-pending:#F0A03D;
+  --color-estado-pending-borde:#C97814;
+  --color-estado-error:#E4724E;
+  --color-estado-error-borde:#8F2D0E;
+  --color-estado-rejected:#C33266;
+  --color-estado-rejected-borde:#721d3c;
+
+  --color-estado-light-amarillo:#FFEFD1;
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -9,9 +53,39 @@
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  
+
 }
+
+/* body {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+} */
+
+ body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  justify-content: center;
+  align-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+#root {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 
 a {
   font-weight: 500;
@@ -22,17 +96,16 @@ a:hover {
   color: #535bf2;
 }
 
-body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
-}
 
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
+}
+
+
+h2 {
+  font-family: 'Oswald', sans-serif; 
+  font-size: 40pt; 
 }
 
 button {

@@ -8,7 +8,7 @@ import { LoggedProvider } from './context/LoggedProvider.jsx'
 ReactDOM.createRoot(document.getElementById('root')).render(
   <LoggedProvider> 
   <App />
-</LoggedProvider>
-
+</LoggedProvider>,
+ document.getElementById('root')
 
 )

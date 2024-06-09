@@ -73,7 +73,13 @@ export const validPasswordRepeat=(str1,str2)=>{
   return str1 === str2;
 }
 
-export const validUser=(respuesta)=>{
+export const validIdUser=(respuesta)=>{
+  if(respuesta.error && respuesta.message.includes('token')) return false;
+  return respuesta
+}
+
+
+export const validProducts=(respuesta)=>{
   if(respuesta.error && respuesta.message.includes('token')) return false;
   return respuesta
 }

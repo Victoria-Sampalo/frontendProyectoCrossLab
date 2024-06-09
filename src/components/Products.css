@@ -5,7 +5,7 @@
   align-items: center;
 }
 
-.products ul {
+.products ul { 
   display: grid;
   grid-template-columns: repeat(
     auto-fit,

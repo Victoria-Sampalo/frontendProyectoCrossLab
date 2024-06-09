@@ -3,6 +3,7 @@ import React, { useState, useEffect, useContext } from "react";
 import { BrowserRouter, Route, Link, Router, Routes } from 'react-router-dom';
 import { allProducts, allProductsByFilters } from "./services/api";
 import { tokenUser } from './lib/data';
+import './App.css'
 
 import Header from "./components/Header";
 import { Products } from "./components/Products";
@@ -19,22 +20,7 @@ import { obtenerToken } from './lib/serviceToken.js'
 import DetalleProducto from "./components/DetalleProducto";
 import { LoggedContext } from './context/LoggedProvider';
 import Account from './components/Account.jsx';
-
-// function useFilters(){
-//   // const[filters,setFilters]=useState({
-//   //     minPrice: 0,
-//   //     category: "all",
-//   //   });
-
-//     const {filters, setFilters}=useContext(FiltersContext)
-  
-//   console.log(filters)
-
-//     return {filters, setFilters}
-
-    
-// }
-
+import Checkout from './components/Checkout';
 
 function App() {
   //const {cambiarLogged, logged, logout}=useLogin()
@@ -74,22 +60,7 @@ function App() {
         const response = await allProductsByFilters(filters);
         //Me traigo el token
         const token= obtenerToken();
-        //Controlo si está o no logueado
-        // if(token!=null) {
-        //   const user= await tokenUser(token)
-        //   console.log("usuario en app "+ user);
-        //   if(user==null||user.error ){
-        //     logout()
-        //   } else {
-        //     console.log("EXISTE usuario en app "+ user);
-        //     cambiarLogged(user)
-        //     setUsuario(user)
-           
-
-        //   }
-        // } else {
-        //   logout()
-        // }
+        
         if (token) {
           const user = await tokenUser(token);
           if (!user || user.error) {
@@ -115,11 +86,6 @@ function App() {
   }, [filters, limit]); 
   // El segundo argumento del useEffect es un array de dependencias, en este caso, vacío para que el efecto solo se ejecute una vez al montar el componente
 
-  // if (products != null) {
-  //   const objectKeys = Object.keys(products);
-  //   const objectLength = objectKeys.length;
-  //   //console.log(objectLength);
-  // }
   
   const home=()=>{
     return (
@@ -151,6 +117,7 @@ function App() {
           <Route path='/product/:id' element={<DetalleProducto/>}/>
           <Route path="/account" element={<Account/>} />
           <Route path="/about" element={<h1>About</h1>}/>
+          <Route path="/checkout" element={<Checkout />} />
         </Routes>
        </main>
        {/* <Footer filters={filters} usuario={usuario}/> */}

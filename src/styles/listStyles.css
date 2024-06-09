@@ -1,0 +1,40 @@
+/* listStyles.css */
+.listContainer {
+    margin-top: 20px;
+    /* border:1px solid purple; */
+  }
+  
+  .listItem {
+    background-color: var(--color-morado);
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 10px;
+  }
+  
+  .listItem:hover {
+    background-color: #e0e0e0;
+  }
+  
+  .listItem p {
+    margin: 5px 0;
+  }
+  
+  .listItem ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .listItem li {
+    margin-bottom: 5px;
+  }
+  
+  .listTitle {
+    font-size: 25px;
+    font-weight: bold;
+    text-align: left;
+    color: var(--color-rosa-vivo);
+    text-transform: uppercase;
+    margin: 20px;
+
+  }
+  

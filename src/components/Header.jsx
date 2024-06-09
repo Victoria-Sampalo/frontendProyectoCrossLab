@@ -1,33 +1,30 @@
 import React from 'react';
 import { useLogin } from '../hooks/useLogin';
-import { FaUserCircle } from "react-icons/fa";
-import { FaRegUserCircle } from "react-icons/fa";
-import {  Link, useNavigate } from 'react-router-dom';
+import { FaUserCircle, FaRegUserCircle } from "react-icons/fa";
+import { Link, useNavigate } from 'react-router-dom';
+import './Header.css';
+import logo from '../assets/logoCrossLab.svg'; // Ajusta la ruta según tu estructura de carpetas
 
 
 function Header() {
-  const {logged, cambiarLogged, logout}=useLogin()
-  // Inicializar el hook de navegación
+  const { logged, cambiarLogged, logout } = useLogin();
   const navigate = useNavigate();
- //console.log("En header "+ JSON.stringify(logged))
- const icono = ()=>{
-  if(logged.estaLogueado){
-    return <button onClick={()=>logout()}>CERRAR SESIÓN</button> 
-    //<FaUserCircle onClick={()=>logout()}/>
-  }else{
-    return <Link to="/login"><FaRegUserCircle /></Link>
-    
-  }
- }
+
+  const icono = () => {
+    if (logged.estaLogueado) {
+      return <button onClick={() => logout()}>CERRAR SESIÓN</button>;
+    } else {
+      return <Link to="/login"><FaRegUserCircle /></Link>;
+    }
+  };
 
   return (
-    <header style={headerStyle}>
-      <h1>C</h1>
+    <header>
+       <img src={logo} alt="Logo CrossLab" style={{ width: '100px', height: '100px' }} />
       <nav>
-        <ul style={navStyle}>
+        <ul>
           <li><a href="/">HOME | </a></li>
           <li><a href="/about"> ABOUT |</a></li>
-          {/* <li><a href="/account"> ACCOUNT |  </a></li> */}
           {logged.estaLogueado && <li><Link to="/account">ACCOUNT</Link></li>}
           <li>{icono()}</li>
         </ul>
@@ -35,19 +32,5 @@ function Header() {
     </header>
   );
 }
-
-// Estilos para el encabezado y la navegación
-const headerStyle = {
-  backgroundColor: '#333',
-  color: '#fff',
-  padding: '10px 0',
-  textAlign: 'center',
-};
-
-const navStyle = {
-  listStyle: 'none',
-  display: 'flex',
-  justifyContent: 'center',
-};
 
 export default Header;
