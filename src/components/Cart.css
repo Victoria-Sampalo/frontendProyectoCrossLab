@@ -35,14 +35,14 @@
   border-radius: 9999px;
   cursor: pointer;
   display: flex;
-  height: 32px;
   justify-content: center;
   padding: 4px;
   position: fixed;
-  right: 8px;
-  top: 8px;
+  right: 10px;
+  top: 10px;
   transition: all .3s ease;
-  width: 32px;
+  width: 42px;
+  height: 42px;
   z-index: 9999;
 }
 

@@ -29,14 +29,14 @@
     flex-direction: column;
 }
 
-.inputGroup > label {
+.inputGroup > label{
     padding: 0.5rem 0;
     text-transform: uppercase;
     color: var(--color-rosa-vivo);
     font-weight: bold;
 }
 
-.inputGroup > input {
+.inputGroup > input, .inputGroup select {
     border: none;
     border: solid 1px var(--color-azul-oscuro);
     border-radius: 15px;
@@ -44,6 +44,24 @@
     border-bottom: solid 3px var(--color-azul-claro);
 }
 
+
+
 .inputGroup > span {
     padding: 0.5rem 0;
+}
+
+@media (max-width: 768px) {
+    .formContainer {
+        margin: 1rem;
+        width: calc(100% - 2rem);
+        padding: 1rem;
+    }
+
+    .formContainer > h2 {
+        font-size: 24pt;
+    }
+
+    .inputGroup > input {
+        padding: 0.6rem;
+    }
 }

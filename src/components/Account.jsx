@@ -24,7 +24,7 @@ const Account = () => {
 
     return (
         <div>
-            <h1>ACCOUNT</h1>
+            <h2>ACCOUNT</h2>
             {logged.user.type === 'admin' ? <VistaAdmin /> : <VistaNormal />}
         </div>
     );

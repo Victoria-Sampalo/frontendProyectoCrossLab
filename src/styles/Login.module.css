@@ -68,3 +68,18 @@
         width: 500px;
     }
   } */
+  @media (max-width: 768px) {
+    .loginContainer {
+        margin: 1rem;
+        width: calc(100% - 2rem);
+        padding: 1rem;
+    }
+
+    .loginContainer > h2 {
+        font-size: 24pt;
+    }
+
+    .inputGroup > input {
+        padding: 0.6rem;
+    }
+}

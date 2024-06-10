@@ -80,7 +80,7 @@ export function Filters( {cambiarFiltro,item, onResetFilters} ){
     return(
 
         <section className='filters'>
-            <button onClick={()=>btnSearch()}>BUSCAR{SearchIcon()}</button>
+           
             <div>
             {/* Entonces, cuando haces clic en la etiqueta "Precio a partir de:",
              el control de formulario asociado, que es el input con el id igual 
@@ -109,6 +109,7 @@ export function Filters( {cambiarFiltro,item, onResetFilters} ){
         </select>
 
             </div>
+            <button onClick={()=>btnSearch()}>{SearchIcon()}</button>
 
         </section>
 

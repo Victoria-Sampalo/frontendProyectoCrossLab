@@ -4,7 +4,6 @@ import { BrowserRouter, Route, Link, Router, Routes } from 'react-router-dom';
 import { allProducts, allProductsByFilters } from "./services/api";
 import { tokenUser } from './lib/data';
 import './App.css'
-
 import Header from "./components/Header";
 import { Products } from "./components/Products";
 import { Filters } from "./components/Filters";
@@ -21,6 +20,7 @@ import DetalleProducto from "./components/DetalleProducto";
 import { LoggedContext } from './context/LoggedProvider';
 import Account from './components/Account.jsx';
 import Checkout from './components/Checkout';
+import CreateAccount from "./components/CreateAccount.jsx";
 
 function App() {
   //const {cambiarLogged, logged, logout}=useLogin()
@@ -113,9 +113,10 @@ function App() {
         <Routes>
           <Route path="/" element={home()}/>
           <Route path="/login" element={<Login/>} />
-          <Route path="/register" element={<h1>Register</h1>}/>
+          <Route path="/createaccount" element={<CreateAccount/>} />
           <Route path='/product/:id' element={<DetalleProducto/>}/>
           <Route path="/account" element={<Account/>} />
+        
           <Route path="/about" element={<h1>About</h1>}/>
           <Route path="/checkout" element={<Checkout />} />
         </Routes>

@@ -1,12 +1,68 @@
 .filters {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-start;
   font-size: 14px;
   font-weight: 700;
+  font-size: 1rem;
+  /* border:1px solid purple; */
+  color: var(--color-rosa-vivo);
+  padding:1rem;
+
 }
 
 .filters > div {
   display: flex;
   gap: 1rem;
+  padding: 1rem;
+}
+
+.filters > div >select {
+  font-size: 1rem;
+  color:var(--color-verde-vivo);
+  padding:0 0.65rem;
+}
+
+
+
+.filters >button{
+  border-radius: 50px;
+  width: 50px;
+  height: 50px;
+  background-color: transparent;
+  cursor: pointer;
+  position: relative;
+  border:1px solid white;
+
+}
+
+.filters >button svg{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 20px;
+  height: auto;
+  fill: white;
+}
+
+
+.filters >button:hover *{
+  fill:var(--color-morado-vivo);
+  stroke: var(--color-morado-vivo);
+
+}
+
+/* Establece un ancho fijo para los productos en dispositivos móviles */
+@media (max-width: 768px) {
+  .filters {
+
+    flex-direction: column;
+    align-items: flex-start;
+    
+  }
+
+  .filters button{
+    margin:1rem;
+  }
 }

@@ -26,4 +26,22 @@ header {
   nav ul li a:hover {
     text-decoration: underline;
   }
+
+
+  nav ul li button{
+    margin-left: 1rem;
+    padding:0.5rem;
+    font-size: 1.45rem;
+    border:1px solid white;
+    color:var(--color-morado-vivo)
+  }
+
+
+  nav ul li button:hover{
+   
+    color: white;
+  }
+
+  
+  
   

@@ -5,15 +5,16 @@
   align-items: center;
 }
 
+/* Establece un ancho fijo para los productos en dispositivos móviles */
+@media (max-width: 768px) {
+  .products ul { 
+    grid-template-columns: repeat(1, minmax(0, 1fr)); /* Solo un producto por fila */
+  }
+}
+
 .products ul { 
   display: grid;
-  grid-template-columns: repeat(
-    auto-fit,
-    minmax(
-      200px,
-      1fr
-    )
-  );
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 1rem;
 }
 

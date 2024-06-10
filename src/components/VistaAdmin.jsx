@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import GestionProductos from './GestionProductos.jsx';
 import GestionPedidos from './GestionPedidos.jsx';
 import GestionUsuarios from './GestionUsuarios.jsx';
+import '../styles/VistaAdmin.module.css';
 
 const VistaAdmin = () => {
   const [currentView, setCurrentView] = useState('productos');
@@ -21,12 +22,12 @@ const VistaAdmin = () => {
   };
 
   return (
-    <div>
-      <h1>Panel de Administración</h1>
+    <div className="vistaAdminContainer">
+      <h2>Dashboard Admin</h2>
       <div>
-        <button onClick={() => setCurrentView('productos')}>Gestión de Productos</button>
-        <button onClick={() => setCurrentView('pedidos')}>Gestión de Pedidos</button>
-        <button onClick={() => setCurrentView('usuarios')}>Gestión de Usuarios</button>
+        <button onClick={() => setCurrentView('productos')}>PRODUCTS</button>
+        <button onClick={() => setCurrentView('pedidos')}>ORDERS</button>
+        <button onClick={() => setCurrentView('usuarios')}>USERS</button>
       </div>
       <div>
         {renderView()}

@@ -59,6 +59,7 @@ const VistaNormal = () => {
                 <ul>
                 <li>Id Order: {order._id}</li>
                 <li>Shipping date: {formatDateTime(order.shipping_date)}</li>
+                <li>Status: {order.order_status}</li>
                 <li>Total amount: {order.total_cost} €</li>
               </ul>
               </div>

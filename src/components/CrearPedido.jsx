@@ -69,7 +69,7 @@ const CrearPedido = () => {
     if (valido) {
       console.log("--------------------------------------");
       console.log(datos);
-      const token = obtenerToken();
+      const token =  obtenerToken();
       
       // Llama a la función createInvoice con los datos de la factura
       const nuevoPedido = await crearPedidoAdmin(token, datos);

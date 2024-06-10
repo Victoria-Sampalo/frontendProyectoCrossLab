@@ -84,3 +84,10 @@ export const validProducts=(respuesta)=>{
   return respuesta
 }
 
+
+export const validUser=(respuesta)=>{
+  if(respuesta.error && respuesta.message.includes('token')) return false;
+  return respuesta
+}
+
+

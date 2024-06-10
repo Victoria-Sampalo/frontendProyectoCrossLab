@@ -35,12 +35,11 @@ export const allProducts = async () => {
 //Función que hace un fetch para traerme todos los productos filtrados
 export const allProductsByFilters = async (filters,limit, offset) => {
   // Función para realizar la petición
-
   try {
-    const url = `${import.meta.env.VITE_API}/gamesfilter/`;
+    const url=`${import.meta.env.VITE_API}/productsbyfilters`;
     // Realizar la solicitud usando fetch
     const response = await fetch(
-      "http://localhost:8080/api/productsbyfilters",
+      url,
       {
         method: 'POST',
         headers: {

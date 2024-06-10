@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { productId } from '../lib/data';
 import { useCart } from '../hooks/useCart';
+import { useImageExists } from '../hooks/useImageExists.js'; 
 
 const DetalleProducto = () => {
   const [product, setProduct] = useState(null);

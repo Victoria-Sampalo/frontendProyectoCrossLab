@@ -14,7 +14,12 @@ const Checkout = () => {
     const [datos, setDatos] = useState({
         id_user: logged.user._id,
         shipping_address: logged.user.billing_address,
-        payment_method: '',
+        payment_method: ''
+    });
+    const [tarjetaDatos, setTarjetaDatos] = useState({
+        credit_card_number: '',
+        credit_card_expiry: '',
+        credit_card_cvc: ''
     });
     const [errores, setErrores] = useState({});
     const navigate = useNavigate();
@@ -28,14 +33,29 @@ const Checkout = () => {
         setDatos({ ...datos, [e.target.name]: e.target.value });
     };
 
+    
+    const handleTarjetaChange = (e) => {
+        setTarjetaDatos({ ...tarjetaDatos, [e.target.name]: e.target.value });
+    };
+
     const handleCheckout = async () => {
         let valido = true;
         let auxErrores = {};
 
         for (const key in datos) {
-            if (datos[key] === '' && key !== 'payment_method') {
+            if (datos[key] === '' && key !== 'order_status') {
                 auxErrores[key] = "Este campo es obligatorio";
                 valido = false;
+            }
+        }
+
+          // Validación específica para tarjeta de crédito
+          if (datos.payment_method === 'tarjeta-credito') {
+            for (const key in tarjetaDatos) {
+                if (tarjetaDatos[key] === '') {
+                    auxErrores[key] = "Este campo es obligatorio";
+                    valido = false;
+                }
             }
         }
 
@@ -118,12 +138,65 @@ const Checkout = () => {
                     value={datos.payment_method}
                 >
                     <option value="">Seleccione un método de pago</option>
-                    <option value="paypal">PayPal</option>
+                    <option value="tarjeta-credito">Tarjeta de crédito</option>
                     <option value="transferencia">Transferencia</option>
                     <option value="contrareembolso">Contrareembolso</option>
                 </select>
                 <span className="errorMessage">{errores.payment_method}</span>
             </div>
+            
+            {datos.payment_method === 'tarjeta-credito' && (
+                <div>
+                    <div className="inputGroup">
+                        <label htmlFor="credit_card_number">Número de Tarjeta</label>
+                        <input
+                            type="text"
+                            id="credit_card_number"
+                            name="credit_card_number"
+                            onChange={handleTarjetaChange}
+                            value={tarjetaDatos.credit_card_number}
+                        />
+                        <span className="errorMessage">{errores.credit_card_number}</span>
+                    </div>
+                    <div className="inputGroup">
+                        <label htmlFor="credit_card_expiry">Fecha de Expiración</label>
+                        <input
+                            type="text"
+                            id="credit_card_expiry"
+                            name="credit_card_expiry"
+                            onChange={handleTarjetaChange}
+                            value={tarjetaDatos.credit_card_expiry}
+                        />
+                        <span className="errorMessage">{errores.credit_card_expiry}</span>
+                    </div>
+                    <div className="inputGroup">
+                        <label htmlFor="credit_card_cvc">CVC</label>
+                        <input
+                            type="text"
+                            id="credit_card_cvc"
+                            name="credit_card_cvc"
+                            onChange={handleTarjetaChange}
+                            value={tarjetaDatos.credit_card_cvc}
+                        />
+                        <span className="errorMessage">{errores.credit_card_cvc}</span>
+                    </div>
+                </div>
+            )}
+
+            {datos.payment_method === 'transferencia' && (
+                <div>
+                    <p>Su pedido estará en pendiente de pago hasta no recibir la transferencia, deberá enviarnos un correo electrónico a info@crosslab.com con la confirmación de transferencia para proceder. Por favor, realice una transferencia a la siguiente cuenta bancaria:  </p>
+                    
+                    <p>Banco: XYZ</p>
+                    <p>IBAN: ES00 0000 0000 0000 0000</p>
+                    <p>SWIFT: XYZABC</p>
+                      </div>
+            )}
+
+            {datos.payment_method === 'contrareembolso' && (
+                <p>El pedido será pagado al repartidor con efectivo. Por favor, tenga el importe exacto.</p>
+            )}
+
             <p>Los envíos se realizan en un periodo de 7 a 10 días hábiles.</p>
             <button onClick={handleCheckout}>Realizar Pedido</button>
             {mensaje && <p>{mensaje}</p>}

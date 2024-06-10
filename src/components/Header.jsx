@@ -12,7 +12,7 @@ function Header() {
 
   const icono = () => {
     if (logged.estaLogueado) {
-      return <button onClick={() => logout()}>CERRAR SESIÓN</button>;
+      return <button onClick={() => logout()}>LOGOUT</button>;
     } else {
       return <Link to="/login"><FaRegUserCircle /></Link>;
     }
@@ -20,11 +20,13 @@ function Header() {
 
   return (
     <header>
-       <img src={logo} alt="Logo CrossLab" style={{ width: '100px', height: '100px' }} />
+        <Link to="/">
+        <img src={logo} alt="Logo CrossLab" style={{ width: '100px', height: '100px' }} />
+        </Link>
       <nav>
         <ul>
           <li><a href="/">HOME | </a></li>
-          <li><a href="/about"> ABOUT |</a></li>
+          {/* <li><a href="/about"> ABOUT |</a></li> */}
           {logged.estaLogueado && <li><Link to="/account">ACCOUNT</Link></li>}
           <li>{icono()}</li>
         </ul>
