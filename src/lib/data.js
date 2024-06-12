@@ -128,3 +128,48 @@ export const crearUsuarioNormal = async (token, datos) => {
   return data.data;
 };
 
+export const getCountProductsAdminFilters = async (token, filtros) => {
+  const datos = {
+    id: filtros._id,
+    name: filtros.name,
+    category: filtros.category,
+  };
+  const url = `${import.meta.env.VITE_API}/countproductsadminfilters`;
+  const response = await fetch(url, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${token}`,
+    },
+    body: JSON.stringify(datos),
+  });
+  if (response.status == 409)
+    return { error: true, message: "Token no valido" };
+  const data = await response.json();
+  return data.data;
+};
+
+
+export const getAllProductsAdminLimitFilters = async (token, limit, offset, filtros) => {
+  const datos = {
+    limit,
+    offset,
+    id: filtros._id,
+    name: filtros.name,
+    category: filtros.category,
+  };
+
+  const url = `${import.meta.env.VITE_API}/getallproductsadmin`;
+  const response = await fetch(url, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${token}`,
+    },
+    body: JSON.stringify(datos),
+  });
+  if (response.status == 409)
+    return { error: true, message: "Token no valido" };
+  const data = await response.json();
+  return data.data;
+};

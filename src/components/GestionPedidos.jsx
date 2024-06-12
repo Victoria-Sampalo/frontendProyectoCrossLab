@@ -42,7 +42,7 @@ const GestionPedidos = () => {
               <p>Nº ORDER: {order._id}</p>
               <p>STATUS: {order.order_status}</p>
               <p>DATE: {formatDateTime(order.order_date)}</p>
-              <p>{order.totalPrice}</p>
+              <p>{order.totalPrice} €</p>
             </div>          
         )
       })}
