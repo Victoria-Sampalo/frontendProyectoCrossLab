@@ -6,6 +6,7 @@
 @import './styles/formStyles.css';
 :root {
   --color-fondo-oscuro:#1E1E1E;
+  --color-fondo-oscuro-dos:rgb(36, 33, 33);
  --color-rosa-vivo:#F2308B;
  --color-rosa-claro:#FC80AD;
 
@@ -40,6 +41,7 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+ 
 }
 
 :root {
@@ -49,8 +51,7 @@
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
+  /* background-color: #242424; */
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   
@@ -75,6 +76,7 @@
   align-items: center;
   min-width: 320px;
   min-height: 100vh;
+  background-color: rgb(36, 33, 33);
 }
 
 #root {
@@ -113,11 +115,12 @@ button {
   border: 1px solid transparent;
   padding: 0.6em 1.2em;
   font-size: 1em;
-  font-weight: 500;
+  font-weight: 600;
   font-family: inherit;
   background-color: #1a1a1a;
   cursor: pointer;
   transition: border-color 0.25s;
+  color:white;
 }
 button:hover {
   border-color: #646cff;
@@ -127,15 +130,3 @@ button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
-}

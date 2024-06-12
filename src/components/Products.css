@@ -9,6 +9,7 @@
 @media (max-width: 768px) {
   .products ul { 
     grid-template-columns: repeat(1, minmax(0, 1fr)); /* Solo un producto por fila */
+ 
   }
 }
 
@@ -16,6 +17,7 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 1rem;
+  padding:1rem;
 }
 
 .products li {
