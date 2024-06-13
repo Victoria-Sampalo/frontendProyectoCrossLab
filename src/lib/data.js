@@ -173,3 +173,43 @@ export const getAllProductsAdminLimitFilters = async (token, limit, offset, filt
   const data = await response.json();
   return data.data;
 };
+
+
+
+export const crearProducto = async (token, datos) => {
+  const producto = {
+    name: datos.name,
+    price: datos.price,
+    brand: datos.brand,
+    category: datos.category,
+    description: datos.description,
+    images: datos.images,
+    stock: datos.stock
+  };
+
+  console.log("lib data peticion llega ")
+  console.log(producto)
+
+  const url = `${import.meta.env.VITE_API}/createproduct`; 
+  const response = await fetch(url, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${token}`,
+    },
+    body: JSON.stringify(producto),
+  });
+
+  if (response.status === 401) {
+    return { error: true, message: "Token no válido" };
+  }
+
+  const data = await response.json();
+  console.log(data);
+
+  if (data.error) {
+    return data;
+  } else {
+    return data; 
+  }
+};

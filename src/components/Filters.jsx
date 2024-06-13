@@ -3,7 +3,7 @@
 import { allCategories, allProductsByFilters } from '../services/api';
 import './Filters.css'
 import { useId, useState, useEffect } from 'react'
-import { CartIcon, SearchIcon } from './Icons';
+import {SearchIcon } from './Icons';
 
 export function Filters( {cambiarFiltro,item, onResetFilters} ){
     const [filters, setFilters]=useState({

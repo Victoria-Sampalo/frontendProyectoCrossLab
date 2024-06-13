@@ -1,5 +1,8 @@
-
+.vista_admin_container{
+    border:1px solid red;
+}
 button{
     margin: 0.75rem;
     font-size: 1.20rem;
 }
+

@@ -3,7 +3,7 @@ import { Navigate } from 'react-router-dom';
 import { LoggedContext } from '../context/LoggedProvider';
 import VistaNormal from './VistaNormal';
 import VistaAdmin from './VistaAdmin';
-
+import '../styles/account.css'
 const Account = () => {
     const { logged } = useContext(LoggedContext);
     const [isLoading, setIsLoading] = useState(true);
@@ -23,7 +23,7 @@ const Account = () => {
     }
 
     return (
-        <div>
+        <div className='account-container'>
             <h2>ACCOUNT</h2>
             {logged.user.type === 'admin' ? <VistaAdmin /> : <VistaNormal />}
         </div>

@@ -28,3 +28,12 @@ export const formatDateTime = (isoDateTime) => {
     return `${formattedDay}-${formattedMonth}-${year} ${formattedHours}:${formattedMinutes}`;
 
 }
+
+export const imageExists = async (url) => {
+    try {
+      const response = await fetch(url);
+      return response.ok;
+    } catch (error) {
+      return false;
+    }
+  };

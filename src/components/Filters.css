@@ -18,7 +18,20 @@
   /* border:1px solid red; */
   justify-content: center;
   align-items: center;
+
 }
+
+.filters > div> input {
+  border: none;
+  border: solid 1px white;
+  border-radius: 15px;
+  padding: 0.8rem;
+  color:white;
+  font-size: 0.80rem;
+  background-color: var(--color-fondo-oscuro-dos);
+
+}
+
 
 .filters > div >select {
   font-size: 1rem;
@@ -62,13 +75,15 @@
 /* Establece un ancho fijo para los productos en dispositivos móviles */
 @media (max-width: 768px) {
   .filters {
-
     flex-direction: column;
     align-items: flex-start;
+    width: 100%;
     
   }
 
   .filters button{
     margin:1rem;
   }
+
+ 
 }

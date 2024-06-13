@@ -1,0 +1,24 @@
+.account-container{
+  
+    padding:1rem;
+}
+
+
+
+@media (max-width: 768px) {
+
+    .account-container{
+        /* background-color: purple; */
+       display:flex;
+       flex-direction: column;
+       justify-content: center;
+       align-items: center;
+       text-align: center;
+       max-width: 90%;
+
+    }
+
+
+
+
+}

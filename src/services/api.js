@@ -70,11 +70,18 @@ export const allProductsByFilters = async (filters,limit, offset) => {
 //Hace un fech para traerme todas las categorias que existan
 export const allCategories = async () => {
   // Función para realizar la petición
+  
 
   try {
     // Realizar la solicitud usando fetch
-    const response = await fetch("http://localhost:8080/api/categories");
+    const url=`${import.meta.env.VITE_API}/categories`;
 
+    const response = await fetch(url, {
+      method: 'GET',
+      headers: {
+          'Content-Type': 'application/json'
+      },
+    });
     // console.log(response)
 
     // Verificar si la respuesta es exitosa (status code 200)

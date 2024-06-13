@@ -22,7 +22,7 @@ const VistaAdmin = () => {
   };
 
   return (
-    <div className="vistaAdminContainer">
+    <div className="vista_admin_container">
       <h2>Dashboard Admin</h2>
       <div>
         <button onClick={() => setCurrentView('productos')}>PRODUCTS</button>

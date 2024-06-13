@@ -7,9 +7,11 @@
     border: 1px solid var(--color-morado-vivo);
     padding: 2rem;
     margin: 1rem;
-    min-width: 250px;
-    width: auto;
+    /* min-width: 200px; */
+    
+    
 }
+
 
 .formContainer > h2 {
     text-align: center;
@@ -18,10 +20,52 @@
     margin-bottom: 20px;
 }
 
+
+.formContainer> div{
+    /* border:1px solid red; */
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.formContainer>form{
+    /* border:1px solid blue; */
+    display:flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.formContainer>form>div{
+    /* border:1px solid green; */
+    width: 49%;
+}
+
+
+
+.formContainer  h3 {
+    text-align: center;
+    color: var(--color-rosa-vivo);
+    font-size: 20pt;
+}
 .formContainer > p {
     padding: 1rem 0;
     text-align: center;
     color: white;
+}
+
+
+.formContainer button.btnClose{
+    border:1px solid white;
+    margin:0;
+    position: relative;
+    right: -1rem;
+    top:-1rem;
+
+
 }
 
 .inputGroup {
@@ -46,6 +90,9 @@
 
 
 
+
+
+
 .inputGroup > span {
     padding: 0.5rem 0;
 }
@@ -64,4 +111,19 @@
     .inputGroup > input {
         padding: 0.6rem;
     }
+
+    
+.formContainer>form{
+    /* border:1px solid purple; */
+
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.formContainer>form>div{
+    width: 100%;
+}
 }

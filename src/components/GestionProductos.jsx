@@ -1,4 +1,3 @@
-// ./src/components/GestionProductos.jsx
 import React, { useEffect, useState } from "react";
 import "../styles/listStyles.css";
 import { useNavigate } from "react-router-dom";
@@ -6,70 +5,56 @@ import {
   tokenUser,
   getCountProductsAdminFilters,
   getAllProductsAdminLimitFilters,
-  
+  crearProducto, // Importa la función crearProducto si no está importada ya
 } from "../lib/data";
 import { useLogin } from "../hooks/useLogin";
 import { obtenerToken } from "../lib/serviceToken";
 import { FaEdit, FaTrash, FaSave } from "react-icons/fa";
 import { GrFormPrevious, GrFormNext } from "react-icons/gr";
 import { MdCancel, MdFirstPage, MdLastPage } from "react-icons/md";
+import FilterProductAdmin from "./FilterProductAdmin";
+import CrearProductoForm from "./CrearProductoForm";
 
 const GestionProductos = () => {
-  const { logged,logout } = useLogin();
+  const { logged, logout } = useLogin();
   const [products, setProducts] = useState(null);
   const [showCreateForm, setShowCreateForm] = useState(false); // Estado para mostrar/ocultar el formulario de creación
-  const [offset, setOffset] = useState(0); //offset
+  const [offset, setOffset] = useState(0);
   const [cantidad, setCantidad] = useState(null);
-  const [limit, setLimit] = useState(2);
+  const [limit, setLimit] = useState(10);
   const [filtros, setFiltros] = useState({});
   const [editingProduct, setEditingProduct] = useState(null);
-
+  const navigate = useNavigate();
+  const [imageUrls, setImageUrls] = useState({});
 
   useEffect(() => {
     if (!logged.estaLogueado) navigate("/login");
     const cargarDatos = async () => {
-      const id = logged.user._id;
       const token = obtenerToken();
       let esTokenValid = await tokenUser(token);
-      //console.log(esTokenValid);
       if (esTokenValid.error) {
-       logout()
+        logout();
       } else {
-        const numeroRegistros = await getCountProductsAdminFilters(
-          token,
-          filtros
-        );
-
-       
- 
+        const numeroRegistros = await getCountProductsAdminFilters(token, filtros);
         setCantidad(numeroRegistros.total);
-        console.log(cantidad)
-        //cantidad/limit
-        const productos = await getAllProductsAdminLimitFilters(
-          token,
-          limit,
-          offset,
-          filtros
-        );
-
-        setProducts(productos); // Actualiza el estado con los datos recibidos
-        console.log(productos);
+        const productos = await getAllProductsAdminLimitFilters(token, limit, offset, filtros);
+        setProducts(productos);
       }
     };
     cargarDatos();
   }, [logged, offset, limit, filtros]);
 
-  const formatDate = (dateString) => {
-    const options = { day: "2-digit", month: "2-digit", year: "numeric" };
-    return new Date(dateString).toLocaleDateString("es-ES", options);
+  const toggleCreateForm = () => {
+    setShowCreateForm(!showCreateForm);
   };
-  const handleLimitChange = (event) => {
-    setLimit(parseInt(event.target.value));
-    setOffset(0); // Reset the offset to 0 when limit changes
+
+  const cambiarFiltros = (f) => {
+    setFiltros(f);
+    setOffset(0); // Restablecer a la primera página al aplicar nuevos filtros
   };
 
   const cambiarPagina = (operador) => {
-    if (operador == "+") {
+    if (operador === "+") {
       setOffset(offset + limit);
     } else {
       setOffset(offset - limit);
@@ -85,9 +70,10 @@ const GestionProductos = () => {
     setOffset(lastPageIndex * limit);
   };
 
-  const totalPages = Math.ceil(cantidad / limit); // Calculate total pages
+  const totalPages = Math.ceil(cantidad / limit); // Calcular el número total de páginas
 
   const renderPageNumbers = () => {
+   
     const pageNumbers = [];
     for (let i = 1; i <= Math.min(totalPages, 5); i++) {
       const isActive = (i - 1) * limit === offset;
@@ -107,67 +93,70 @@ const GestionProductos = () => {
   };
 
   return (
-    <div>
-      <h2 className="listTitle">PRODUCTS MANAGEMENT</h2>
-      <button>CREATE PRODUCT</button>
+    <div className='product_container'>
+      <h2 className="listTitle">GESTIÓN DE PRODUCTOS</h2>
+      <button className="btn btn-primary" onClick={toggleCreateForm}>
+        CREAR PRODUCTO
+      </button>
+      {/* Si showCreateForm es true, renderiza el formulario de creación */}
+      {showCreateForm && <CrearProductoForm onClose={toggleCreateForm} />}
 
-    
+      <FilterProductAdmin cambiarFiltros={cambiarFiltros} />
+
       {products && products.length === 0 && (
-        <p>TODAVÍA NO HAY PRODUCTOS REGISTRADAS</p>
+        <p>TODAVÍA NO HAY PRODUCTOS REGISTRADOS</p>
       )}
 
       {products && products.length > 0 && (
-         <div className="listContainer">
-         {products.map((order) => {
-           return (
-               <div className="listItem"   key={order._id}>
-                <p className="title_p" >{order.name}</p>
-                 <p>ID product: {order._id}</p>
-                
-
-                 <p>SKU: {order.sku}</p>
-
-                 <p>Brand: {order.brand}</p>
-                 <p>Category:{order.category}</p>
-                 <p>Price: {order.price} €</p>
-                 <p>STOCK: {order.stock} uds.</p>
-                 <p>Description:</p>
-                 <p>{order.description}</p>
-                 
-
-               </div>          
-           )
-         })}
-         </div>
+        <div className="listContainer">
+          {products.map((product) => (
+            <div className="listItem" key={product._id}>
+              <div>
+                <p className="title_p">{product.name}</p>
+                <p>ID producto: {product._id}</p>
+                <p>SKU: {product.sku}</p>
+                <p>Marca: {product.brand}</p>
+                <p>Categoría: {product.category}</p>
+                <p>Precio: {product.price} €</p>
+                <p>STOCK: {product.stock} uds.</p>
+                <p>Descripción:</p>
+                <p className="description-product">{product.description}</p>
+              </div>
+              <div className="imageContainer">
+                <img src={product.images[0]} alt={product.sku} />
+              </div>
+            </div>
+          ))}
+        </div>
       )}
 
-       {/* PAGINATION */}
-       {cantidad && cantidad > limit && (
-          <nav aria-label="Page navigation example">
-          <ul class="pagination justify-content-center">
-            <li class="page-item disabled" onClick={goToFirstPage}>
-              <a class="page-link" href="#" aria-label="Previous">
-                <MdFirstPage /> {/* First Page Icon */}
+      {/* PAGINACIÓN */}
+      {cantidad && cantidad > limit && (
+        <nav aria-label="Page navigation example">
+          <ul className="pagination justify-content-center">
+            <li className="page-item" onClick={goToFirstPage}>
+              <a className="page-link" href="#" aria-label="Previous">
+                <MdFirstPage /> {/* Icono de primera página */}
               </a>
             </li>
             {offset > 0 && (
-              <li class="page-item" onClick={() => cambiarPagina("-")}>
-                <a class="page-link" href="#" aria-label="Previous">
-                  <GrFormPrevious /> {/* Previous Page Icon */}
+              <li className="page-item" onClick={() => cambiarPagina("-")}>
+                <a className="page-link" href="#" aria-label="Previous">
+                  <GrFormPrevious /> {/* Icono de página anterior */}
                 </a>
               </li>
             )}
             {renderPageNumbers()}
-            {offset < (cantidad - limit) && (
-              <li class="page-item" onClick={() => cambiarPagina("+")}>
-                <a class="page-link" href="#" aria-label="Next">
-                  <GrFormNext /> {/* Next Page Icon */}
+            {offset < cantidad - limit && (
+              <li className="page-item" onClick={() => cambiarPagina("+")}>
+                <a className="page-link" href="#" aria-label="Next">
+                  <GrFormNext /> {/* Icono de página siguiente */}
                 </a>
               </li>
             )}
-            <li class="page-item">
-              <a class="page-link" href="#" onClick={goToLastPage} aria-label="Next">
-                <MdLastPage /> {/* Last Page Icon */}
+            <li className="page-item" onClick={goToLastPage}>
+              <a className="page-link" href="#" aria-label="Next">
+                <MdLastPage /> {/* Icono de última página */}
               </a>
             </li>
           </ul>

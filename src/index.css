@@ -4,6 +4,7 @@
 
 /* Importar los estilos comunes para los formularios */
 @import './styles/formStyles.css';
+@import './components/Filters.css';
 :root {
   --color-fondo-oscuro:#1E1E1E;
   --color-fondo-oscuro-dos:rgb(36, 33, 33);
