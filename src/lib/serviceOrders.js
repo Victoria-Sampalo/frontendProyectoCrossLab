@@ -1,7 +1,7 @@
 // .src/lib.serviceOrders.js
-import { uri } from "./uri";
 
-const URI=uri();
+const uri="https://back-mongoose.onrender.com/api";
+
 
 
 export const getAllOrdersNormal = async (token, id) => {
@@ -11,7 +11,7 @@ export const getAllOrdersNormal = async (token, id) => {
 
     console.log("id en service orders" + id) 
     
-    const url = `${URI}/getuserorders`;
+    const url = `${uri}/getuserorders`;
     const response = await fetch(url, {
       method: "POST",
       headers: {
@@ -29,7 +29,7 @@ export const getAllOrdersNormal = async (token, id) => {
 
   export const getAllOrdersAdmin = async (token) => {
  
-    const url = `${URI}/orders`;
+    const url = `${uri}/orders`;
     const response = await fetch(url, {
       method: "GET",
       headers: {
@@ -47,7 +47,7 @@ export const getAllOrdersNormal = async (token, id) => {
 
   export const crearPedidoAdmin = async (token, datosPedido) => {
     try {
-      const url = `${URI}/createorder`;
+      const url = `${uri}/createorder`;
       const response = await fetch(url, {
         method: 'POST',
         headers: {
@@ -85,7 +85,7 @@ export const getAllOrdersNormal = async (token, id) => {
     
     console.log(JSON.stringify(pedido))
     
-    const url = `${URI}/createorder`;
+    const url = `${uri}/createorder`;
     try {
       const response = await fetch(url, {
         method: 'POST',

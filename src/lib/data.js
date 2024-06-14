@@ -1,13 +1,11 @@
-import { uri } from "./uri";
-
-const URI=uri();
+const uri="https://back-mongoose.onrender.com/api";
 
 
 
 
 
 export const getPrueba = async () => {
-  const url = `${URI}/users`;
+  const url = `${uri}/users`;
   console.log(url);
   const response = await fetch(url, {
     method: "GET",
@@ -21,7 +19,7 @@ export const loggear = async (email, password) => {
       password,
   };
   console.log(datos);
-  const url=`${URI}/login`
+  const url=`${uri}/login`
   const response = await fetch(url, {
       method: 'POST',
       headers: {
@@ -42,7 +40,7 @@ export const tokenUser = async (token) => {
       token,
     };
 
-    const url = `${URI}/validtoken`;
+    const url = `${uri}/validtoken`;
     const response = await fetch(url, {
       method: "POST",
       headers: {
@@ -63,7 +61,7 @@ export const tokenUser = async (token) => {
 
 
 export const productId=async(id)=>{
-  const url=`${URI}/product/${id}`
+  const url=`${uri}/product/${id}`
   const response = await fetch(url);
   const data = await response.json();
   if(data.error) return data
@@ -84,7 +82,7 @@ export const crearUsuarioAdmin = async (token, datos) => {
     user_type: datos.type == null ? "normal" : datos.type,
     user_status: datos.status == null ? false : datos.status,
   };
-  const url = `${URI}/createuser`;
+  const url = `${uri}/createuser`;
   const response = await fetch(url, {
     method: "POST",
     headers: {
@@ -117,7 +115,7 @@ export const crearUsuarioNormal = async (token, datos) => {
    
     user_type: "normal", // Tipo de usuario por defecto
   };
-  const url = `${URI}/createuser`;
+  const url = `${uri}/createuser`;
   const response = await fetch(url, {
     method: "POST",
     headers: {
@@ -142,7 +140,7 @@ export const getCountProductsAdminFilters = async (token, filtros) => {
     name: filtros.name,
     category: filtros.category,
   };
-  const url = `${URI}/countproductsadminfilters`;
+  const url = `${uri}/countproductsadminfilters`;
   const response = await fetch(url, {
     method: "POST",
     headers: {
@@ -167,7 +165,7 @@ export const getAllProductsAdminLimitFilters = async (token, limit, offset, filt
     category: filtros.category,
   };
 
-  const url = `${URI}/getallproductsadmin`;
+  const url = `${uri}/getallproductsadmin`;
   const response = await fetch(url, {
     method: "POST",
     headers: {
@@ -198,7 +196,7 @@ export const crearProducto = async (token, datos) => {
   console.log("lib data peticion llega ")
   console.log(producto)
 
-  const url = `${URI}/createproduct`; 
+  const url = `${uri}/createproduct`; 
   const response = await fetch(url, {
     method: "POST",
     headers: {

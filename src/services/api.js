@@ -1,6 +1,5 @@
-import { uri } from "./uri";
 
-const URI=uri();
+const uri="https://back-mongoose.onrender.com/api";
 
 
 //Función que hace un fetch para traerme todos los productos
@@ -9,7 +8,7 @@ export const allProducts = async () => {
 
   try {
     // Realizar la solicitud usando fetch
-    const url=`${URI}/products`;
+    const url=`${uri}/products`;
      const response = await fetch(url, {
       method: 'GET',
       headers: {
@@ -41,7 +40,7 @@ export const allProducts = async () => {
 export const allProductsByFilters = async (filters,limit, offset) => {
   // Función para realizar la petición
   try {
-    const url=`${URI}/productsbyfilters`;
+    const url=`${uri}/productsbyfilters`;
     // Realizar la solicitud usando fetch
     const response = await fetch(
       url,
@@ -79,7 +78,7 @@ export const allCategories = async () => {
 
   try {
     // Realizar la solicitud usando fetch
-    const url=`${URI}/categories`;
+    const url=`${uri}/categories`;
 
     const response = await fetch(url, {
       method: 'GET',
