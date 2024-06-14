@@ -3,22 +3,39 @@
 |—— .env.local
 |—— .eslintrc.cjs
 |—— .gitignore
+|—— dockerfile
 |—— index.html
+|—— node_modules
 |—— package-lock.json
 |—— package.json
 |—— public
+|    |—— images
+|        |—— Belts.webp
+|        |—— Elbow_Pads.webp
+|        |—— Knee_Pads.webp
+|        |—— Rope.jpg
+|        |—— Vests.jpg
+|        |—— Wrist_Guards.jpg
 |    |—— vite.svg
 |—— src
 |    |—— API
 |        |—— services.js
+|    |—— App.css
 |    |—— App.jsx
 |    |—— assets
+|        |—— ClearCartIcon.svg
+|        |—— logoCrossLab.svg
 |        |—— react.svg
 |    |—— components
 |        |—— Account.jsx
 |        |—— Cart.css
 |        |—— Cart.jsx
+|        |—— Checkout.jsx
+|        |—— CrearPedido.jsx
+|        |—— CrearProductoForm.jsx
+|        |—— CreateAccount.jsx
 |        |—— DetalleProducto.jsx
+|        |—— FilterProductAdmin.jsx
 |        |—— Filters.css
 |        |—— Filters.jsx
 |        |—— Footer.css
@@ -26,6 +43,7 @@
 |        |—— GestionPedidos.jsx
 |        |—— GestionProductos.jsx
 |        |—— GestionUsuarios.jsx
+|        |—— Header.css
 |        |—— Header.jsx
 |        |—— Icons.jsx
 |        |—— Login.jsx
@@ -36,13 +54,13 @@
 |        |—— VistaAdmin.jsx
 |        |—— VistaNormal.jsx
 |    |—— context
-|        |—— cart copy.jsx
 |        |—— cart.jsx
 |        |—— filters.jsx
 |        |—— LoggedProvider.jsx
 |    |—— hooks
 |        |—— useCart.js
 |        |—— useFilters.js
+|        |—— useImageExists.js
 |        |—— useLogin.js
 |    |—— index.css
 |    |—— lib
@@ -59,7 +77,11 @@
 |    |—— services
 |        |—— api.js
 |    |—— styles
+|        |—— account.css
+|        |—— formStyles.css
+|        |—— listStyles.css
 |        |—— Login.module.css
+|        |—— VistaAdmin.module.css
 |    |—— utils
 |        |—— utils.js
 |—— vite.config.js
