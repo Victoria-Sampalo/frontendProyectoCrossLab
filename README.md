@@ -1,5 +1,5 @@
-🛒 Proyecto Frontend CrossLab.
-📄 Descripción
+# 🛒 Proyecto Frontend CrossLab.
+## 📄 Descripción
 Este proyecto es una aplicación llamada CrossLab, un e-commerce de venta de equipamiento deportivo. Está desarrollado en Vite y React. La aplicación se conecta con un backend desarrollado en Node.js y Express, utilizando un archivo `.env.local` para configurar la URL de la API. Puedes encontrar el repositorio del backend en el siguiente enlace: [Repositorio Backend](https://github.com/Victoria-Sampalo/back_mongoose).
 
 Ambas aplicaciones están desplegadas en Render.com, y además el frontend usa Docker.
@@ -147,64 +147,61 @@ npm start
 ## 🌟 Componentes Principales
 
 ### 💪 Components   
-Account.jsx: Componente para gestionar las cuentas de usuario.
-Cart.jsx: Componente para mostrar y gestionar el carrito de compras.
-Checkout.jsx: Componente para gestionar el proceso de pago.
-CrearPedido.jsx: Componente para crear nuevos pedidos.
-CrearProductoForm.jsx: Formulario para crear nuevos productos.
-CreateAccount.jsx: Formulario para crear una nueva cuenta de usuario.
-DetalleProducto.jsx: Componente para mostrar los detalles de un producto.
-FilterProductAdmin.jsx: Componente para filtrar productos en la vista de administración.
-Filters.jsx: Componente para aplicar filtros a los productos.
-Footer.jsx: Componente para el pie de página de la aplicación.
-GestionPedidos.jsx: Componente para gestionar pedidos.
-GestionProductos.jsx: Componente para gestionar productos.
-GestionUsuarios.jsx: Componente para gestionar usuarios.
-Header.jsx: Componente para el encabezado de la aplicación.
-Icons.jsx: Componente para gestionar íconos.
-Login.jsx: Formulario de inicio de sesión.
-Products.jsx: Componente para mostrar la lista de productos.
-SinProducts.jsx: Componente que se muestra cuando no hay productos disponibles.
-VistaAdmin.jsx: Vista principal para los administradores.
-VistaNormal.jsx: Vista principal para los usuarios normales.
+- `Account.jsx`: Componente para gestionar las cuentas de usuario.
+- `Cart.jsx`: Componente para mostrar y gestionar el carrito de compras.
+- `Checkout.jsx`: Componente para gestionar el proceso de pago.
+- `CrearPedido.jsx`: Componente para crear nuevos pedidos.
+- `CrearProductoForm.jsx`: Formulario para crear nuevos productos.
+- `CreateAccount.jsx`: Formulario para crear una nueva cuenta de usuario.
+- `DetalleProducto.jsx`: Componente para mostrar los detalles de un producto.
+- `FilterProductAdmin.jsx`: Componente para filtrar productos en la vista de administración.
+- `Filters.jsx`: Componente para aplicar filtros a los productos.
+- `Footer.jsx`: Componente para el pie de página de la aplicación.
+- `GestionPedidos.jsx`: Componente para gestionar pedidos.
+- `GestionProductos.jsx`: Componente para gestionar productos.
+- `GestionUsuarios.jsx`: Componente para gestionar usuarios.
+- `Header.jsx`: Componente para el encabezado de la aplicación.
+- `Icons.jsx`: Componente para gestionar íconos.
+- `Login.jsx`: Formulario de inicio de sesión.
+- `Products.jsx`: Componente para mostrar la lista de productos.
+- `SinProducts.jsx`: Componente que se muestra cuando no hay productos disponibles.
+- `VistaAdmin.jsx`: Vista principal para los administradores.
+- `VistaNormal.jsx`: Vista principal para los usuarios normales.
 
 ### 📗 Context
-cart.jsx: Contexto para gestionar el estado del carrito de compras.
-filters.jsx: Contexto para gestionar los filtros aplicados a los productos.
-LoggedProvider.jsx: Contexto para gestionar el estado de inicio de sesión de los usuarios.
+- `cart.jsx`: Contexto para gestionar el estado del carrito de compras.
+- `filters.jsx`: Contexto para gestionar los filtros aplicados a los productos.
+- `LoggedProvider.jsx`: Contexto para gestionar el estado de inicio de sesión de los usuarios.
 
 ### 🪝 Hooks
-useCart.js: Hook personalizado para gestionar las acciones del carrito de compras.
-useFilters.js: Hook personalizado para aplicar y gestionar filtros.
-useImageExists.js: Hook para verificar la existencia de una imagen.
-useLogin.js: Hook para gestionar las acciones de inicio de sesión.
+- `useCart.js`: Hook personalizado para gestionar las acciones del carrito de compras.
+- `useFilters.js`: Hook personalizado para aplicar y gestionar filtros.
+- `useImageExists.js`: Hook para verificar la existencia de una imagen.
+- `useLogin.js`: Hook para gestionar las acciones de inicio de sesión.
 
 ### ✨ Reducers
-cart.js: Reducer para gestionar el estado del carrito de compras.
+- `cart.js`: Reducer para gestionar el estado del carrito de compras.
 
 ### 📦 Lib
-data.js: Funciones y datos auxiliares.
-serviceOrders.js: Funciones para gestionar pedidos.
-serviceToken.js: Funciones para gestionar tokens de autenticación.
-textErrors.js: Mensajes de error para la validación.
-valid.js: Funciones de validación.
+- `data.js`: Funciones y datos auxiliares.
+- `serviceOrders.js`: Funciones para gestionar pedidos.
+- `serviceToken.js`: Funciones para gestionar tokens de autenticación.
+- `textErrors.js`: Mensajes de error para la validación.
+- `valid.js`: Funciones de validación.
 
 ### 📬 Services
-api.js: Funciones para interactuar con la API del backend.
+- `api.js`: Funciones para interactuar con la API del backend.
 
 ### 🎨 Styles 
-account.css: Estilos para la gestión de cuentas.
-formStyles.css: Estilos para formularios.
-listStyles.css: Estilos para listas.
-Login.module.css: Estilos específicos para el componente de inicio de sesión.
-VistaAdmin.module.css: Estilos específicos para la vista de administrador.
-Además, algunos componentes tienen sus propios archivos CSS dentro del directorio components.
+- `account.css`: Estilos para la gestión de cuentas.
+- `formStyles.css`: Estilos para formularios.
+- `listStyles.css`: Estilos para listas.
+- `Login.module.css`: Estilos específicos para el componente de inicio de sesión.
+- `VistaAdmin.module.css`: Estilos específicos para la vista de administrador.
+- Además, algunos componentes tienen sus propios archivos CSS dentro del directorio components.
 
 ### 🙇 Utils
-
- utils.js: Funciones utilitarias.
-
-
+- `utils.js`: Funciones utilitarias.
 
 ## 🌐 Despliegue en Render.com
 Para desplegar la aplicación en Render.com, hemos utilizado además un dockerfile para constuir la aplicación. 
@@ -217,32 +214,24 @@ Construir la imagen:
 
 ```plaintext
 docker build -t nombre-imagen .
-
 ```
 
  - En mi caso usé: 
 
 ```plaintext
   docker build -t frontend-app .
-
-
 ```
 	
 
 Ejecutar el contenedor:
 ```plaintext
   docker run -d -p <PUERTO_LOCAL>:<PUERTO_CONTENEDOR> nombre-imagen
-
-
-
 ```
 
  - En mi caso usé: 
 
 ```plaintext
   docker run -d -p 8080:80 frontend-app.
-
-
 ```
 
 
@@ -259,15 +248,14 @@ Para desplegar la aplicación en Render.com, sigue estos pasos:
 
 ## 🛠️ Tecnologías Utilizadas
 
-```plaintext
-React: Biblioteca de JavaScript para construir interfaces de usuario.
-Vite: Herramienta de desarrollo rápida para proyectos de frontend.
-Docker: Plataforma para desarrollar, enviar y ejecutar aplicaciones en contenedores.
-Bootstrap: Framework CSS para el desarrollo de interfaces responsivas.
-Render.com: Plataforma de despliegue.
-Axios: Cliente HTTP para realizar solicitudes a la API.
-Jsonwebtoken: Biblioteca para trabajar con JSON Web Tokens (JWT) para autenticación.
-```
+- `React`: Biblioteca de JavaScript para construir interfaces de usuario.
+- `Vite`: Herramienta de desarrollo rápida para proyectos de frontend.
+- `Docker`: Plataforma para desarrollar, enviar y ejecutar aplicaciones en contenedores.
+- `Bootstrap`: Framework CSS para el desarrollo de interfaces responsivas.
+- `Render.com`: Plataforma de despliegue.
+- `Axios`: Cliente HTTP para realizar solicitudes a la API.
+- `Jsonwebtoken`: Biblioteca para trabajar con JSON Web Tokens (JWT) para autenticación.
+
 
 📜 Creador
 
