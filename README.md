@@ -48,7 +48,10 @@ frontendProyectoCrossLab/
 |        |—— CrearPedido.jsx
 |        |—— CrearProductoForm.jsx
 |        |—— CreateAccount.jsx
+|        |—— DetallePedido.jsx
 |        |—— DetalleProducto.jsx
+|        |—— EditarPedido.jsx
+|        |—— FilterOrder.jsx
 |        |—— FilterProductAdmin.jsx
 |        |—— Filters.css
 |        |—— Filters.jsx
@@ -92,6 +95,8 @@ frontendProyectoCrossLab/
 |        |—— api.js
 |    |—— styles
 |        |—— account.css
+|        |—— DetallePedido.css
+|        |—— DetalleProducto.css
 |        |—— formStyles.css
 |        |—— listStyles.css
 |        |—— Login.module.css
