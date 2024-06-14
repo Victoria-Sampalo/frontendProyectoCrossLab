@@ -1,10 +1,15 @@
+import { uri } from "./uri";
+
+const URI=uri();
+
+
 //Función que hace un fetch para traerme todos los productos
 export const allProducts = async () => {
   // Función para realizar la petición
 
   try {
     // Realizar la solicitud usando fetch
-    const url=`${import.meta.env.VITE_API}/products`;
+    const url=`${URI}/products`;
      const response = await fetch(url, {
       method: 'GET',
       headers: {
@@ -36,7 +41,7 @@ export const allProducts = async () => {
 export const allProductsByFilters = async (filters,limit, offset) => {
   // Función para realizar la petición
   try {
-    const url=`${import.meta.env.VITE_API}/productsbyfilters`;
+    const url=`${URI}/productsbyfilters`;
     // Realizar la solicitud usando fetch
     const response = await fetch(
       url,
@@ -74,7 +79,7 @@ export const allCategories = async () => {
 
   try {
     // Realizar la solicitud usando fetch
-    const url=`${import.meta.env.VITE_API}/categories`;
+    const url=`${URI}/categories`;
 
     const response = await fetch(url, {
       method: 'GET',

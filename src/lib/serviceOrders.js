@@ -1,4 +1,9 @@
 // .src/lib.serviceOrders.js
+import { uri } from "./uri";
+
+const URI=uri();
+
+
 export const getAllOrdersNormal = async (token, id) => {
     const datos = {
       id_user: id
@@ -6,7 +11,7 @@ export const getAllOrdersNormal = async (token, id) => {
 
     console.log("id en service orders" + id) 
     
-    const url = `${import.meta.env.VITE_API}/getuserorders`;
+    const url = `${URI}/getuserorders`;
     const response = await fetch(url, {
       method: "POST",
       headers: {
@@ -24,7 +29,7 @@ export const getAllOrdersNormal = async (token, id) => {
 
   export const getAllOrdersAdmin = async (token) => {
  
-    const url = `${import.meta.env.VITE_API}/orders`;
+    const url = `${URI}/orders`;
     const response = await fetch(url, {
       method: "GET",
       headers: {
@@ -42,7 +47,7 @@ export const getAllOrdersNormal = async (token, id) => {
 
   export const crearPedidoAdmin = async (token, datosPedido) => {
     try {
-      const url = `${import.meta.env.VITE_API}/createorder`;
+      const url = `${URI}/createorder`;
       const response = await fetch(url, {
         method: 'POST',
         headers: {
@@ -80,7 +85,7 @@ export const getAllOrdersNormal = async (token, id) => {
     
     console.log(JSON.stringify(pedido))
     
-    const url = `${import.meta.env.VITE_API}/createorder`;
+    const url = `${URI}/createorder`;
     try {
       const response = await fetch(url, {
         method: 'POST',

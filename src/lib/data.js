@@ -1,5 +1,13 @@
+import { uri } from "./uri";
+
+const URI=uri();
+
+
+
+
+
 export const getPrueba = async () => {
-  const url = `${import.meta.env.VITE_API}/users`;
+  const url = `${URI}/users`;
   console.log(url);
   const response = await fetch(url, {
     method: "GET",
@@ -13,7 +21,7 @@ export const loggear = async (email, password) => {
       password,
   };
   console.log(datos);
-  const url=`${import.meta.env.VITE_API}/login`
+  const url=`${URI}/login`
   const response = await fetch(url, {
       method: 'POST',
       headers: {
@@ -34,7 +42,7 @@ export const tokenUser = async (token) => {
       token,
     };
 
-    const url = `${import.meta.env.VITE_API}/validtoken`;
+    const url = `${URI}/validtoken`;
     const response = await fetch(url, {
       method: "POST",
       headers: {
@@ -55,7 +63,7 @@ export const tokenUser = async (token) => {
 
 
 export const productId=async(id)=>{
-  const url=`${import.meta.env.VITE_API}/product/${id}`
+  const url=`${URI}/product/${id}`
   const response = await fetch(url);
   const data = await response.json();
   if(data.error) return data
@@ -76,7 +84,7 @@ export const crearUsuarioAdmin = async (token, datos) => {
     user_type: datos.type == null ? "normal" : datos.type,
     user_status: datos.status == null ? false : datos.status,
   };
-  const url = `${import.meta.env.VITE_API}/createuser`;
+  const url = `${URI}/createuser`;
   const response = await fetch(url, {
     method: "POST",
     headers: {
@@ -109,7 +117,7 @@ export const crearUsuarioNormal = async (token, datos) => {
    
     user_type: "normal", // Tipo de usuario por defecto
   };
-  const url = `${import.meta.env.VITE_API}/createuser`;
+  const url = `${URI}/createuser`;
   const response = await fetch(url, {
     method: "POST",
     headers: {
@@ -134,7 +142,7 @@ export const getCountProductsAdminFilters = async (token, filtros) => {
     name: filtros.name,
     category: filtros.category,
   };
-  const url = `${import.meta.env.VITE_API}/countproductsadminfilters`;
+  const url = `${URI}/countproductsadminfilters`;
   const response = await fetch(url, {
     method: "POST",
     headers: {
@@ -159,7 +167,7 @@ export const getAllProductsAdminLimitFilters = async (token, limit, offset, filt
     category: filtros.category,
   };
 
-  const url = `${import.meta.env.VITE_API}/getallproductsadmin`;
+  const url = `${URI}/getallproductsadmin`;
   const response = await fetch(url, {
     method: "POST",
     headers: {
@@ -190,7 +198,7 @@ export const crearProducto = async (token, datos) => {
   console.log("lib data peticion llega ")
   console.log(producto)
 
-  const url = `${import.meta.env.VITE_API}/createproduct`; 
+  const url = `${URI}/createproduct`; 
   const response = await fetch(url, {
     method: "POST",
     headers: {
