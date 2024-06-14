@@ -13,6 +13,8 @@
 
   }
 
+
+
   .listItem {
     background-color: var(--color-morado);
     border-radius: 8px;
@@ -69,7 +71,24 @@
     margin: 20px;
 
   }
+
+  /* Estilos para orders management */
+
+  .list_orders{
+    background-color: purple;
+
+
+  }
   
+  .list_orders>p{
+    padding: 1rem;
+  }
+
+  /* Estilos para editar */
+  .listContainer > div > div > svg {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
 
   ul.pagination .page-item a.active-page {
     color: white; /* Set text color to white */

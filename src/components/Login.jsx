@@ -14,8 +14,8 @@ const Login = () => {
      //const {logged, cambiarLogged} = useLogin();
      const { logged, cambiarLogged } = useContext(LoggedContext);
      // Definir los estados locales para email y password
-     const [email, setEmail] = useState(null);
-     const [pass, setPass] = useState(null);
+     const [email, setEmail] = useState("");
+     const [pass, setPass] = useState("");
      // Definir el estado local para errores
      const [errores, setError] = useState({
          email: null,
@@ -28,7 +28,7 @@ const Login = () => {
      const navigate = useNavigate();
    // useEffect para redirigir si el usuario ya está logueado
     useEffect(()=>{
-        console.log(logged)
+        // console.log(logged)
        if(logged.estaLogueado) navigate('/');
       },[logged, navigate])
 // Manejar cambios en los inputs de email y password
@@ -85,38 +85,27 @@ const Login = () => {
 
     }
    // Función para manejar el login
-    const loguear=async ()=>{
-       // Verificar que no haya errores de validación
-        if(errores.email==null && errores.password==null){
-           // Verificar que email y password no sean nulos
-            if(email==null || pass==null) {
-                let auxErrores={...errores}
-                if(email==null) auxErrores['email']=textErrors('vacio')
-                if(pass==null) auxErrores['password']=textErrors('vacio')
-                setError(auxErrores)
-            } else{
-               // Intentar loguear con el email y password proporcionados
-                const login= await loggear(email,pass);
-               //const login= await getPrueba();
-              console.log("-.-----------------------------------------");
-                console.log(login)
-                if(login.error){
-                  // Si hay un error en el login, actualizar el estado de errores
-                    let auxErrores={...errores}
-                    console.log(auxErrores);
-                    auxErrores['mensajeError']=login.message;
-                    setError(auxErrores)
-                } else {
-                  console.log(login.user);
-                   // Si el login es exitoso, cambiar el estado de login y guardar el token
-                    cambiarLogged(login.user)
-                    guardarToken(login.token)
-                    navigate('/')
-                }
-            }
-            
+   const loguear = async () => {
+    if (errores.email === null && errores.password === null) {
+      if (!email || !pass) {
+        let auxErrores = { ...errores };
+        if (!email) auxErrores['email'] = textErrors('vacio');
+        if (!pass) auxErrores['password'] = textErrors('vacio');
+        setError(auxErrores);
+      } else {
+        const login = await loggear(email, pass);
+        if (login.error) {
+          let auxErrores = { ...errores };
+          auxErrores['mensajeError'] = login.message;
+          setError(auxErrores);
+        } else {
+          cambiarLogged(login.user);
+          guardarToken(login.token);
+          navigate('/');
         }
+      }
     }
+  }
 
   return (
     <div className={styles.loginContainer}>
@@ -128,7 +117,7 @@ const Login = () => {
           id="email"
           name="email"
           onChange={(e) => handleChange(e)}
-          value={email}
+          value={email || ""}
         />
         <span className="errorSpan">{errores.email}</span>
       </div>
@@ -139,7 +128,7 @@ const Login = () => {
           id="pass"
           name="pass"
           onChange={(e) => handleChange(e)}
-          value={pass}
+          value={pass || ""}
         />
         <span className="errorSpan">{errores.password}</span>
       </div>

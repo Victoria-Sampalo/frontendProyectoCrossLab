@@ -4,6 +4,9 @@ import { productId } from '../lib/data';
 import { useCart } from '../hooks/useCart';
 import { useImageExists } from '../hooks/useImageExists.js'; 
 
+import '../styles/DetalleProducto.css';
+import { FaArrowLeft } from "react-icons/fa";
+
 const DetalleProducto = () => {
   const [product, setProduct] = useState(null);
   const { id } = useParams();
@@ -45,57 +48,42 @@ const DetalleProducto = () => {
     <>
       {product ? (
         
-        <div>
-            <div>
-              <button onClick={goBack}>VOLVER</button>
-            </div>
-          <picture>
-           <img src={product.images[0]} alt={`${product.sku}`} 
-           style={{ 
-            width: '300px', 
-            height: '300px', 
-            objectFit: 'cover' 
-          }} />
+        <div className='detalleproducto-container'>
+            <div className='btn-volver'>
+              <button onClick={goBack}> <FaArrowLeft /> VOLVER</button>
+           </div>
+           
+           <div className='contenedor-producto'>
+
+           <picture>
+           <img src={product.images[0]} alt={`${product.sku}`} title={`${product.name}`} 
+           />
           </picture>
-          <div>
-            <div>
+            
+            <div className='contenedor-info-producto'>
               <div>
-                <p>Name</p>
-                <p>{product.name}</p>
-              </div>
-              <div>
-                <p>SKU</p>
-                <p>{product.sku}</p>
-              </div>
-              <div>
-                <p>Category</p>
-                <p>{product.category}</p>
-              </div>
-              <div>
-                <p>Price</p>
-                <p>{product.price}</p>
-              </div>
-            </div>
-            <div>
               <h2>{product.name}</h2>
-              <p>{product.description}</p>
-            </div>
-            <div>
-              <p>Brand</p>
-              <p>{product.brand}</p>
-            </div>
-            <div>
+              <div>
+                
+                <h3>{product.price} €</h3>
+                <span className='btn-span'>{product.category}</span>
+                <p>{product.brand}</p>
+                <p>{product.description}</p>
+              </div>
+              </div>
+             
+             
+              <div className='contenedor-mandos'>
+                <button onClick={increaseQuantity}>+</button>
+                <p>{quantity} Uds</p>
+                <button onClick={decreaseQuantity}>-</button>
+              </div>
+
               <button onClick={handleAddToCart}>
                 AÑADIR AL CARRITO POR: {(product.price * quantity).toFixed(2)} €
               </button>
-              <div>
-                <button onClick={increaseQuantity}>+</button>
-                <p>{quantity}</p>
-                <button onClick={decreaseQuantity}>-</button>
-              </div>
-            </div>
-            <div>
-              <button onClick={goBack}>VOLVER</button>
+           
+              
             </div>
           </div>
         </div>

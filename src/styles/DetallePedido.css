@@ -1,0 +1,17 @@
+.detallePedido_contenedor{
+    border:2px solid var(--color-morado-vivo);
+    border-radius: 10px;
+    padding:1rem 2rem;
+}
+
+
+.detallePedido_contenedor h3, h4{
+    color: var(--color-rosa-vivo)
+}
+
+.detallePedido_contenedor ul{
+    border:2px solid var(--color-morado-vivo);
+    border-radius: 10px;
+    padding:1rem 2rem;
+}
+

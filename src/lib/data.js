@@ -1,7 +1,6 @@
 const uri="https://back-mongoose.onrender.com/api";
 
-
-
+// const uri="http://localhost:1000/api";
 
 
 export const getPrueba = async () => {
@@ -18,7 +17,8 @@ export const loggear = async (email, password) => {
       email,
       password,
   };
-  console.log(datos);
+  //  console.log(datos);
+  //  console.log(uri);
   const url=`${uri}/login`
   const response = await fetch(url, {
       method: 'POST',
@@ -29,7 +29,7 @@ export const loggear = async (email, password) => {
   });
   if(response.status==403) return {error:true,message:'Usuario o contraseña incorrecta'}
   const data = await response.json();
-  console.log(data);
+  // console.log(data);
   return data.data
 }
 
