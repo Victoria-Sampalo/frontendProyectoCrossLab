@@ -12,8 +12,6 @@ La aplicación CrossLab corresponde al proyecto final del módulo superior de De
 La estructura del proyecto es la siguiente:
 
 ```plaintext
-
-```
 frontendProyectoCrossLab/
 |
 |—— .env.local
